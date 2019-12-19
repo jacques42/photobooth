@@ -1,5 +1,8 @@
 /* exported L10N */
 const L10N = {
+    'user_interface_background_chroma': 'Chroma keying panel background image path',
+    'user_interface_background_admin': 'Ruta de la imagen de fondo del panel de administración',
+    'user_interface_background_image': 'Ruta de la imagen de fondo',
     'send': 'Enviar',
     'show_error_messages': 'Mostrar mensajes de error',
     'general_default_imagefilter': 'Filtro de imagen predeterminado',
@@ -51,6 +54,9 @@ const L10N = {
     'folders': 'Carpetas',
     'commands': 'Los comandos',
     'reset': 'Reiniciar',
+    'remove_images': 'Delete images',
+    'remove_mailtxt': 'Delete "mail-addresses.txt"',
+    'remove_config': 'Delete personal configuration (my.config.inc.php)',
     'language': 'Elija el idioma',
     'dev': 'Modo desarrollador',
     'file_format_date': 'Utilice imágenes al formato fecha.',
@@ -58,6 +64,7 @@ const L10N = {
     'keyingerror': '¡La incrustación en el croma verde es imposible!',
     'use_print': 'Utilizar la impresion',
     'use_qr': 'Utilizar los códigos QR',
+    'general_webserver_ip': 'IP address of the Photobooth web server',
     'use_download': 'Permitir descargas',
     'print_qrcode': 'Código QR en la imagen en proceso de impresión',
     'show_gallery': 'Muestre la galería',
@@ -107,7 +114,10 @@ const L10N = {
     'polaroid_effect': 'Efecto polaroid',
     'general_polaroid_rotation': 'Rotación de imagen polaroid',
     'use_collage': 'Autorice la función collage',
+    'take_frame': 'Tomar foto con marco',
+    'general_take_frame_path': 'Frame',
     'print_frame': 'Imprimir el borde en la foto',
+    'print_frame_path': 'Frame',
     'is_textonprint': 'Imprimir un texto en una foto',
     'print_line1': 'Texto para la línea 1',
     'print_line2': 'Texto para la línea 2',
@@ -116,6 +126,7 @@ const L10N = {
     'print_locationy': 'Coordenadas Y',
     'print_rotation': 'Rotación del texto',
     'print_linespace': 'Interlineado',
+    'print_font_path': 'Font',
     'print_fontsize': 'Tamaño de la fuente',
     'user_interface': 'Interfaz de usuario',
     'user_interface_color_theme': 'Tema',
@@ -127,5 +138,6 @@ const L10N = {
     'jpeg_quality_jpeg_quality_image': 'Calidad de JPEG para fotos (-1 ... 100)',
     'jpeg_quality_jpeg_quality_chroma': 'Calidad de JPEG para chroma-keying (-1 ... 100)',
     'jpeg_quality_jpeg_quality_thumb': 'Calidad de JPEG para thumbnails (-1 ... 100)',
-    'abort': 'Abortar'
+    'abort': 'Abortar',
+    'dark_loader': 'Dark display while countdown'
 }

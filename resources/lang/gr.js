@@ -1,5 +1,8 @@
 /* exported L10N */
 const L10N = {
+    'user_interface_background_chroma': 'Chroma keying panel background image path',
+    'user_interface_background_admin': 'Διαδρομή εικόνας φόντου διαχειριστή',
+    'user_interface_background_image': 'διαδρομή εικόνας φόντου',
     'send': 'στείλετε',
     'show_error_messages': 'Εμφάνιση μηνυμάτων σφάλματος',
     'general_default_imagefilter': 'Προεπιλεγμένο φίλτρο εικόνας',
@@ -51,6 +54,9 @@ const L10N = {
     'folders': 'αρχείο',
     'commands': 'εντολές',
     'reset': 'απόδοση',
+    'remove_images': 'Delete images',
+    'remove_mailtxt': 'Delete "mail-addresses.txt"',
+    'remove_config': 'Delete personal configuration (my.config.inc.php)',
     'language': 'Επιλέξτε γλώσσα',
     'dev': 'Λειτουργία ανάπτυξης',
     'file_format_date': 'Ονομάστε εικόνες με ημερομηνία',
@@ -58,6 +64,7 @@ const L10N = {
     'keyingerror': 'Chroma-Keying nicht möglich!',
     'use_print': 'Ενεργοποίηση εκτύπωσης',
     'use_qr': 'Ενεργοποιήστε τον κωδικό QR',
+    'general_webserver_ip': 'IP address of the Photobooth web server',
     'use_download': 'Επιτρέψτε τη λήψη',
     'print_qrcode': 'QR κώδικα στην εικόνα κατά την εκτύπωση',
     'show_gallery': 'Ενεργοποιήστε τη συλλογή',
@@ -106,7 +113,10 @@ const L10N = {
     'polaroid_effect': 'Επιρροή Polaroid',
     'general_polaroid_rotation': 'Περιστροφή εικόνας Polaroid',
     'use_collage': 'Αφήστε το κολάζ φωτογραφιών',
+    'take_frame': 'Βγάλτε φωτογραφία με το πλαίσιο',
+    'general_take_frame_path': 'Frame',
     'print_frame': 'Εκτύπωση πλαισίου στην εικόνα',
+    'print_frame_path': 'Frame',
     'is_textonprint': 'Εκτυπώστε κείμενο στην εικόνα',
     'print_line1': 'Κείμενο ανά γραμμή 1',
     'print_line2': 'Κείμενο ανά γραμμή 2',
@@ -115,6 +125,7 @@ const L10N = {
     'print_locationy': 'Y-τοποθεσία',
     'print_rotation': 'Περιστροφή κείμενο',
     'print_linespace': 'διάστιχο',
+    'print_font_path': 'Font',
     'print_fontsize': 'το μέγεθος της γραμματοσειράς',
     'user_interface': 'διεπαφή χρήστη',
     'user_interface_color_theme': 'Θέμα',
@@ -126,5 +137,6 @@ const L10N = {
     'jpeg_quality_jpeg_quality_image': 'Ποιότητα JPEG για φωτογραφίες (-1 ... 100)',
     'jpeg_quality_jpeg_quality_chroma': 'Ποιότητα JPEG για chroma-keying (-1 ... 100)',
     'jpeg_quality_jpeg_quality_thumb': 'Ποιότητα JPEG για μικρογραφίες (-1 ... 100)',
-    'abort': 'Αποβάλλω'
+    'abort': 'Αποβάλλω',
+    'dark_loader': 'Dark display while countdown'
 }

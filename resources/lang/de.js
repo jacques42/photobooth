@@ -1,5 +1,8 @@
 /* exported L10N */
 const L10N = {
+    'user_interface_background_chroma': 'Pfad zum Hintergrundbild im Chroma-Keying Panel',
+    'user_interface_background_admin': 'Pfad zum Hintergrundbild im Admin Panel',
+    'user_interface_background_image': 'Pfad zum Hintergrundbild',
     'send': 'Senden',
     'show_error_messages': 'Fehlermeldungen anzeigen',
     'general_default_imagefilter': 'Standardbildfilter',
@@ -51,6 +54,9 @@ const L10N = {
     'folders': 'Ordner',
     'commands': 'Befehle',
     'reset': 'Zurücksetzen',
+    'remove_images': 'Bilder löschen',
+    'remove_mailtxt': '"mail-addresses.txt" löschen',
+    'remove_config': 'Persönliche Konfiguration löschen (my.config.inc.php)',
     'language': 'Sprache wählen',
     'dev': 'Entwicklungs-Modus',
     'file_format_date': 'Bilder mit Datum benennen',
@@ -58,6 +64,7 @@ const L10N = {
     'keyingerror': 'Chroma-Keying nicht möglich!',
     'use_print': 'Drucken aktivieren',
     'use_qr': 'QR-Code aktivieren',
+    'general_webserver_ip': 'IP-Adresse des Photobooth Webservers',
     'use_download': 'Download aktivieren',
     'print_qrcode': 'QR-Code auf dem Bild beim Drucken',
     'show_gallery': 'Galerie aktivieren',
@@ -107,7 +114,10 @@ const L10N = {
     'polaroid_effect': 'Polaroid Effekt',
     'general_polaroid_rotation': 'Polaroid Bild-Rotation',
     'use_collage': 'Foto-Collage erlauben',
+    'take_frame': 'Bild mit Rahmen aufnehmen',
+    'general_take_frame_path': 'Rahmen',
     'print_frame': 'Rahmen auf Bild drucken',
+    'print_frame_path': 'Rahmen',
     'is_textonprint': 'Text auf das Bild drucken',
     'print_line1': 'Text für Zeile 1',
     'print_line2': 'Text für Zeile 2',
@@ -116,6 +126,7 @@ const L10N = {
     'print_locationy': 'Y-Koordinaten',
     'print_rotation': 'Text-Rotation',
     'print_linespace': 'Zeilenabstand',
+    'print_font_path': 'Schriftart',
     'print_fontsize': 'Schriftgröße',
     'user_interface': 'Benutzeroberfläche',
     'user_interface_color_theme': 'Theme',
@@ -127,5 +138,6 @@ const L10N = {
     'jpeg_quality_jpeg_quality_image': 'JPEG Qualität für Bilder (-1 ... 100)',
     'jpeg_quality_jpeg_quality_chroma': 'JPEG Qualität für Chroma-Keying (-1 ... 100)',
     'jpeg_quality_jpeg_quality_thumb': 'JPEG Qualität für Thumbnails (-1 ... 100)',
-    'abort': 'Abbrechen'
+    'abort': 'Abbrechen',
+    'dark_loader': 'Dunkle Anzeige beim Countdown'
 }

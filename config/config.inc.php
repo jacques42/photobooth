@@ -11,6 +11,7 @@ $config['use_qr'] = true;
 $config['use_download'] = true;
 $config['print_qrcode'] = true;
 $config['print_frame'] = false;
+$config['print_frame_path'] = '../resources/img/frames/frame.png';
 $config['crop_onprint'] = false;
 $config['crop_width'] = '1000';
 $config['crop_height'] = '500';
@@ -27,11 +28,18 @@ $config['default_imagefilter'] = 'plain';
 $config['disabled_filters'] = array();
 $config['polaroid_effect'] = false;
 $config['polaroid_rotation'] = '0';
+$config['take_frame'] = false;
+$config['take_frame_path'] = '../resources/img/frames/frame.png';
 $config['chroma_keying'] = true;
 $config['use_collage'] = false;
 $config['continuous_collage'] = false;
 $config['color_theme'] = 'default'; // possible values are default, blue-gray, or an array with the corresponding colors (e.g. ['primary' => '#fff', 'secondary'=>'#a1a1a1', 'font'=>'#000'])
+$config['background_image'] = null;
+$config['background_admin'] = null;
+$config['background_chroma'] = null;
 $config['force_buzzer'] = false;
+$config['dark_loader'] = false;
+$config['webserver_ip'] = null;
 
 // specify key id to use that key to take a picture or collage (e.g. 13 is the enter key)
 // use for example https://keycode.info to get the key code
@@ -78,6 +86,7 @@ $config['textonprint']['line3'] = 'line 3';
 $config['locationx'] = '2250';
 $config['locationy'] = '1050';
 $config['rotation'] = '40';
+$config['font_path'] = '../resources/fonts/GreatVibes-Regular.ttf';
 $config['fontsize'] = '100';
 $config['linespace'] = '100';
 
@@ -104,3 +113,7 @@ $config['jpeg_quality_thumb'] = 60;
 $config['jpeg_quality_chroma'] = 70;
 $config['jpeg_quality_image'] = 80;
 
+// RESET
+$config['reset_remove_images'] = true;
+$config['reset_remove_mailtxt'] = true;
+$config['reset_remove_config'] = true;

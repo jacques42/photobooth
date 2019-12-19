@@ -1,5 +1,8 @@
 /* exported L10N */
 const L10N = {
+    'user_interface_background_chroma': 'Chroma keying panel background image path',
+    'user_interface_background_admin': 'Admin panel background image path',
+    'user_interface_background_image': 'Background image path',
     'send': 'Send',
     'show_error_messages': 'Show error messages',
     'general_default_imagefilter': 'Default image filter',
@@ -51,6 +54,9 @@ const L10N = {
     'folders': 'Folders',
     'commands': 'Commands',
     'reset': 'Reset',
+    'remove_images': 'Delete images',
+    'remove_mailtxt': 'Delete "mail-addresses.txt"',
+    'remove_config': 'Delete personal configuration (my.config.inc.php)',
     'language': 'Choose Language',
     'dev': 'Dev-Mode',
     'file_format_date': 'Use dateformat images',
@@ -58,6 +64,7 @@ const L10N = {
     'keyingerror': 'Chroma keying not possible!',
     'use_print': 'Use Print',
     'use_qr': 'Use QR Codes',
+    'general_webserver_ip': 'IP address of the Photobooth web server',
     'use_download': 'Allow downloads',
     'print_qrcode': 'QR-Code on the picture while printing',
     'show_gallery': 'Show Gallery',
@@ -107,7 +114,10 @@ const L10N = {
     'polaroid_effect': 'Polaroid effect',
     'general_polaroid_rotation': 'Polaroid picture rotation',
     'use_collage': 'Allow photo collage',
+    'take_frame': 'Take picture with frame',
+    'general_take_frame_path': 'Frame',
     'print_frame': 'Print frame on picture',
+    'print_frame_path': 'Frame',
     'is_textonprint': 'Print text on image',
     'print_line1': 'Text for line 1',
     'print_line2': 'Text for line 2',
@@ -116,6 +126,7 @@ const L10N = {
     'print_locationy': 'Y Coordinate',
     'print_rotation': 'Text rotation',
     'print_linespace': 'Line spacing',
+    'print_font_path': 'Font',
     'print_fontsize': 'Font size',
     'user_interface': 'User interface',
     'user_interface_color_theme': 'Theme',
@@ -127,5 +138,6 @@ const L10N = {
     'jpeg_quality_jpeg_quality_image': 'JPEG quality for images (-1 ... 100)',
     'jpeg_quality_jpeg_quality_chroma': 'JPEG quality for chroma-keying (-1 ... 100)',
     'jpeg_quality_jpeg_quality_thumb': 'JPEG quality for thumbnails (-1 ... 100)',
-    'abort': 'Abort'
+    'abort': 'Abort',
+    'dark_loader': 'Dark display while countdown'
 }
