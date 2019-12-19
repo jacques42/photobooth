@@ -1,5 +1,8 @@
 /* exported L10N */
 const L10N = {
+    'user_interface_background_chroma': 'Chroma keying panel background image path',
+    'user_interface_background_admin': 'Chemin de l\'image d\'arrière-plan du panneau d\'administration',
+    'user_interface_background_image': 'Chemin de l\'image de fond',
     'send': 'Envoyer',
     'show_error_messages': 'Afficher les messages d\'erreur',
     'general_default_imagefilter': 'Filtre d\'image par défaut',
@@ -51,6 +54,9 @@ const L10N = {
     'folders': 'Dossiers',
     'commands': 'Les commandes',
     'reset': 'Réinitialiser',
+    'remove_images': 'Delete images',
+    'remove_mailtxt': 'Delete "mail-addresses.txt"',
+    'remove_config': 'Delete personal configuration (my.config.inc.php)',
     'language': 'Choisissez la langue',
     'dev': 'Mode développeur',
     'file_format_date': 'Utilisez images au format date',
@@ -58,6 +64,7 @@ const L10N = {
     'keyingerror': 'L\'incrustation sur fond vert n\'est pas possible!',
     'use_print': 'Utiliser l\'impression',
     'use_qr': 'Utiliser le QR code',
+    'general_webserver_ip': 'IP address of the Photobooth web server',
     'use_download': 'Autoriser les téléchargements',
     'print_qrcode': 'QR-Code sur l\'image en cours d\'impression',
     'show_gallery': 'Montrez la galerie',
@@ -107,7 +114,10 @@ const L10N = {
     'polaroid_effect': 'Effet Polaroid',
     'general_polaroid_rotation': 'Rotation de la photo polaroid',
     'use_collage': 'Autorisez la fonction du montage photo',
+    'take_frame': 'Prendre une photo avec cadre',
+    'general_take_frame_path': 'Frame',
     'print_frame': 'Imprimez le contour sur la photo',
+    'print_frame_path': 'Frame',
     'is_textonprint': 'Imprimez un texte sur la photo',
     'print_line1': 'Texte sur la première ligne',
     'print_line2': 'Texte sur la seconde ligne',
@@ -116,6 +126,7 @@ const L10N = {
     'print_locationy': 'Coordonnée Y',
     'print_rotation': 'Rotation du texte',
     'print_linespace': 'Interligne',
+    'print_font_path': 'Font',
     'print_fontsize': 'Taille de la police',
     'user_interface': 'Interface utilisateur',
     'user_interface_color_theme': 'Thème',
@@ -127,5 +138,6 @@ const L10N = {
     'jpeg_quality_jpeg_quality_image': 'JPEG qualité des images (-1 ... 100)',
     'jpeg_quality_jpeg_quality_chroma': 'JPEG qualité pour chroma-keying (-1 ... 100)',
     'jpeg_quality_jpeg_quality_thumb': 'JPEG qualité des thumbnails (-1 ... 100)',
-    'abort': 'Avorter'
+    'abort': 'Avorter',
+    'dark_loader': 'Dark display while countdown'
 }

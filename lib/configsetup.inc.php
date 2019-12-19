@@ -6,7 +6,7 @@ $configsetup = [
 		'language' => [
 			'type' => 'select',
 			'name' => 'language',
-			'placeholder' => 'language',
+			'placeholder' => $defaultConfig['language'],
 			'options' => [
 				'de' => 'DE',
 				'en' => 'EN',
@@ -18,13 +18,13 @@ $configsetup = [
 		],
 		'start_screen_title' => [
 			'type' => 'input',
-			'placeholder' => 'Photobooth',
+			'placeholder' => $defaultConfig['start_screen_title'],
 			'name' => 'start_screen_title',
 			'value' => $config['start_screen_title']
 		],
 		'start_screen_subtitle' => [
 			'type' => 'input',
-			'placeholder' => 'Webinterface by André Rinas',
+			'placeholder' => $defaultConfig['start_screen_subtitle'],
 			'name' => 'start_screen_subtitle',
 			'value' => $config['start_screen_subtitle']
 		],
@@ -52,6 +52,12 @@ $configsetup = [
 			'type' => 'checkbox',
 			'name' => 'use_qr',
 			'value' => $config['use_qr']
+		],
+		'webserver_ip' => [
+			'type' => 'input',
+			'name' => 'webserver_ip',
+			'placeholder' => '127.0.0.1',
+			'value' => $config['webserver_ip']
 		],
 		'use_download' => [
 			'type' => 'checkbox',
@@ -83,12 +89,12 @@ $configsetup = [
 		'cntdwn_time' => [
 			'type' => 'input',
 			'name' => 'cntdwn_time',
-			'placeholder' => '5',
+			'placeholder' => $defaultConfig['cntdwn_time'],
 			'value' => $config['cntdwn_time']
 		],
 		'cheese_time' => [
 			'type' => 'input',
-			'placeholder' => '1000',
+			'placeholder' => $defaultConfig['cheese_time'],
 			'name' => 'cheese_time',
 			'value' => $config['cheese_time']
 		],
@@ -117,9 +123,20 @@ $configsetup = [
 		],
 		'polaroid_rotation' => [
 			'type' => 'input',
-			'placeholder' => '0',
+			'placeholder' => $defaultConfig['polaroid_rotation'],
 			'name' => 'polaroid_rotation',
 			'value' => $config['polaroid_rotation']
+		],
+		'take_frame' => [
+			'type' => 'checkbox',
+			'name' => 'take_frame',
+			'value' => $config['take_frame']
+		],
+		'take_frame_path' => [
+			'type' => 'input',
+			'placeholder' => $defaultConfig['take_frame_path'],
+			'name' => 'take_frame_path',
+			'value' => $config['take_frame_path']
 		],
 		'chroma_keying' => [
 			'type' => 'checkbox',
@@ -134,7 +151,7 @@ $configsetup = [
 		'collage_cntdwn_time' => [
 			'type' => 'input',
 			'name' => 'collage_cntdwn_time',
-			'placeholder' => '3',
+			'placeholder' => $defaultConfig['collage_cntdwn_time'],
 			'value' => $config['collage_cntdwn_time']
 		],
 		'continuous_collage' => [
@@ -152,16 +169,19 @@ $configsetup = [
 		'jpeg_quality_image' => [
 			'type' => 'input',
 			'name' => 'jpeg_quality_image',
+			'placeholder' => $defaultConfig['jpeg_quality_image'],
 			'value' => $config['jpeg_quality_image']
 		],
 		'jpeg_quality_chroma' => [
 			'type' => 'input',
 			'name' => 'jpeg_quality_chroma',
+			'placeholder' => $defaultConfig['jpeg_quality_chroma'],
 			'value' => $config['jpeg_quality_chroma']
 		],
 		'jpeg_quality_thumb' => [
 			'type' => 'input',
 			'name' => 'jpeg_quality_thumb',
+			'placeholder' => $defaultConfig['jpeg_quality_thumb'],
 			'value' => $config['jpeg_quality_thumb']
 		]
 	],
@@ -169,12 +189,35 @@ $configsetup = [
 		'color_theme' => [
 			'type' => 'select',
 			'name' => 'color_theme',
-			'placeholder' => 'default',
+			'placeholder' => $defaultConfig['color_theme'],
 			'options' => [
 				'default' => 'default',
 				'blue-gray' => 'blue-gray'
 			],
 			'value' => $config['color_theme']
+		],
+		'background_image' => [
+			'type' => 'input',
+			'name' => 'background_image',
+			'placeholder' => 'url(../img/bg.jpg)',
+			'value' => $config['background_image']
+		],
+		'background_admin' => [
+			'type' => 'input',
+			'name' => 'background_admin',
+			'placeholder' => 'url(../img/bg.jpg)',
+			'value' => $config['background_admin']
+		],
+		'background_chroma' => [
+			'type' => 'input',
+			'name' => 'background_chroma',
+			'placeholder' => 'url(../img/bg.jpg)',
+			'value' => $config['background_chroma']
+		],
+		'dark_loader' => [
+			'type' => 'checkbox',
+			'name' => 'dark_loader',
+			'value' => $config['dark_loader']
 		],
 		'show_fork' => [
 			'type' => 'checkbox',
@@ -196,37 +239,37 @@ $configsetup = [
 		],
 		'keying' => [
 			'type' => 'input',
-			'placeholder' => 'keying',
+			'placeholder' => $defaultConfig['folders']['keying'],
 			'name' => 'folders[keying]',
 			'value' => $config['folders']['keying']
 		],
 		'print' => [
 			'type' => 'input',
 			'placeholder' => 'print',
-			'name' => 'folders[print]',
+			'placeholder' => $defaultConfig['folders']['print'],
 			'value' => $config['folders']['print']
 		],
 		'qrcodes' => [
 			'type' => 'input',
-			'placeholder' => 'qrcodes',
+			'placeholder' => $defaultConfig['folders']['qrcodes'],
 			'name' => 'folders[qrcodes]',
 			'value' => $config['folders']['qrcodes']
 		],
 		'thumbs' => [
 			'type' => 'input',
-			'placeholder' => 'thumbs',
+			'placeholder' => $defaultConfig['folders']['thumbs'],
 			'name' => 'folders[thumbs]',
 			'value' => $config['folders']['thumbs']
 		],
 		'tmp' => [
 			'type' => 'input',
-			'placeholder' => 'tmp',
+			'placeholder' => $defaultConfig['folders']['tmp'],
 			'name' => 'folders[tmp]',
 			'value' => $config['folders']['tmp']
 		],
 		'data' => [
 			'type' => 'input',
-			'placeholder' => 'data',
+			'placeholder' => $defaultConfig['folders']['data'],
 			'name' => 'folders[data]',
 			'value' => $config['folders']['data']
 		]
@@ -252,7 +295,7 @@ $configsetup = [
 		'symbol' => [
 			'type' => 'select',
 			'name' => 'event[symbol]',
-			'placeholder' => 'event[symbol]',
+			'placeholder' => $defaultConfig['event']['symbol'],
 			'options' => [
 				'fa-camera' => 'Camera',
 				'fa-camera-retro' => 'Camera Retro',
@@ -283,6 +326,12 @@ $configsetup = [
 			'name' => 'print_frame',
 			'value' => $config['print_frame']
 		],
+		'frame_path' => [
+			'type' => 'input',
+			'placeholder' => $defaultConfig['print_frame_path'],
+			'name' => 'print_frame_path',
+			'value' => $config['print_frame_path']
+		],
 		'crop_onprint' => [
 			'type' => 'checkbox',
 			'name' => 'crop_onprint',
@@ -291,13 +340,13 @@ $configsetup = [
 		'crop_width' => [
 			'type' => 'input',
 			'name' => 'crop_width',
-			'placeholder' => '1000',
+			'placeholder' => $defaultConfig['crop_width'],
 			'value' => $config['crop_width']
 		],
 		'crop_height' => [
 			'type' => 'input',
 			'name' => 'crop_height',
-			'placeholder' => '500',
+			'placeholder' => $defaultConfig['crop_height'],
 			'value' => $config['crop_height']
 		],
 		'is_textonprint' => [
@@ -307,49 +356,55 @@ $configsetup = [
 		],
 		'line1' => [
 			'type' => 'input',
-			'placeholder' => 'line 1',
+			'placeholder' => $defaultConfig['textonprint']['line1'],
 			'name' => 'textonprint[line1]',
 			'value' => $config['textonprint']['line1']
 		],
 		'line2' => [
 			'type' => 'input',
-			'placeholder' => 'line 2',
+			'placeholder' => $defaultConfig['textonprint']['line2'],
 			'name' => 'textonprint[line2]',
 			'value' => $config['textonprint']['line2']
 		],
 		'line3' => [
 			'type' => 'input',
-			'placeholder' => 'line 3',
+			'placeholder' => $defaultConfig['textonprint']['line3'],
 			'name' => 'textonprint[line3]',
 			'value' => $config['textonprint']['line3']
 		],
 		'locationx' => [
 			'type' => 'input',
-			'placeholder' => '2250',
+			'placeholder' => $defaultConfig['locationx'],
 			'name' => 'locationx',
 			'value' => $config['locationx']
 		],
 		'locationy' => [
 			'type' => 'input',
-			'placeholder' => '1050',
+			'placeholder' => $defaultConfig['locationy'],
 			'name' => 'locationy',
 			'value' => $config['locationy']
 		],
 		'rotation' => [
 			'type' => 'input',
-			'placeholder' => '40',
+			'placeholder' => $defaultConfig['rotation'],
 			'name' => 'rotation',
 			'value' => $config['rotation']
 		],
+		'font_path' => [
+			'type' => 'input',
+			'placeholder' => $defaultConfig['font_path'],
+			'name' => 'font_path',
+			'value' => $config['font_path']
+		],
 		'fontsize' => [
 			'type' => 'input',
-			'placeholder' => '100',
+			'placeholder' => $defaultConfig['fontsize'],
 			'name' => 'fontsize',
 			'value' => $config['fontsize']
 		],
 		'linespace' => [
 			'type' => 'input',
-			'placeholder' => '100',
+			'placeholder' => $defaultConfig['linespace'],
 			'name' => 'linespace',
 			'value' => $config['linespace']
 		],
@@ -377,7 +432,7 @@ $configsetup = [
 		],
 		'date_format' => [
 			'type' => 'input',
-			'placeholder' => 'd.m.Y - G:i',
+			'placeholder' => $defaultConfig['gallery']['date_format'],
 			'name' => 'gallery[date_format]',
 			'value' => $config['gallery']['date_format']
 		]
@@ -390,55 +445,55 @@ $configsetup = [
 		],
 		'host' => [
 			'type' => 'input',
-			'placeholder' => 'smtp.example.com',
+			'placeholder' => $defaultConfig['mail_host'],
 			'name' => 'mail_host',
 			'value' => $config['mail_host']
 		],
 		'username' => [
 			'type' => 'input',
-			'placeholder' => 'photobooth@example.com',
+			'placeholder' => $defaultConfig['mail_username'],
 			'name' => 'mail_username',
 			'value' => $config['mail_username']
 		],
 		'password' => [
 			'type' => 'input',
-			'placeholder' => 'yourpassword',
+			'placeholder' => $defaultConfig['mail_password'],
 			'name' => 'mail_password',
 			'value' => $config['mail_password']
 		],
 		'secure' => [
 			'type' => 'input',
-			'placeholder' => 'tls',
+			'placeholder' => $defaultConfig['mail_secure'],
 			'name' => 'mail_secure',
 			'value' => $config['mail_secure']
 		],
 		'port' => [
 			'type' => 'input',
-			'placeholder' => '587',
+			'placeholder' => $defaultConfig['mail_port'],
 			'name' => 'mail_port',
 			'value' => $config['mail_port']
 		],
 		'fromAddress' => [
 			'type' => 'input',
-			'placeholder' => 'photobooth@example.com',
+			'placeholder' => $defaultConfig['mail_fromAddress'],
 			'name' => 'mail_fromAddress',
 			'value' => $config['mail_fromAddress']
 		],
 		'fromName' => [
 			'type' => 'input',
-			'placeholder' => 'Photobooth',
+			'placeholder' => $defaultConfig['mail_fromName'],
 			'name' => 'mail_fromName',
 			'value' => $config['mail_fromName']
 		],
 		'subject' => [
 			'type' => 'input',
-			'placeholder' => 'Here is your picture',
+			'placeholder' => $defaultConfig['mail_subject'],
 			'name' => 'mail_subject',
 			'value' => $config['mail_subject']
 		],
 		'text' => [
 			'type' => 'input',
-			'placeholder' => 'Hey, your picture is attached.',
+			'placeholder' => $defaultConfig['mail_text'],
 			'name' => 'mail_text',
 			'value' => $config['mail_text']
 		],
@@ -467,6 +522,23 @@ $configsetup = [
 			'placeholder' => 'print_msg',
 			'name' => 'print[msg]',
 			'value' => $config['print']['msg']
+		]
+	],
+	'reset' => [
+		'remove_images' => [
+			'type' => 'checkbox',
+			'name' => 'reset_remove_images',
+			'value' => $config['reset_remove_images']
+		],
+		'remove_mailtxt' => [
+			'type' => 'checkbox',
+			'name' => 'reset_remove_mailtxt',
+			'value' => $config['reset_remove_mailtxt']
+		],
+		'remove_config' => [
+			'type' => 'checkbox',
+			'name' => 'reset_remove_config',
+			'value' => $config['reset_remove_config']
 		]
 	]
 ];
