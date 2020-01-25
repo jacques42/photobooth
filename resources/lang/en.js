@@ -81,6 +81,7 @@ const L10N = {
     'general_cntdwn_time': 'Countdown timer in seconds',
     'general_cheese_time': 'Cheeeeeeeese!-Timer in milliseconds',
     'showimage_whenprocessing': 'Preload and show image during filter processing',
+    'general_time_to_live': 'Show image after capture in milliseconds',
     'previewFromCam': 'See preview by device cam',
     'previewCamTakesPic': 'Device cam takes picture',
     'newest_first': 'Show latest images first',

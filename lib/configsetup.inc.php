@@ -118,6 +118,12 @@ $configsetup = [
 			'name' => 'preserve_exif_data',
 			'value' => $config['preserve_exif_data']
 		],
+		'time_to_live' => [
+			'type' => 'input',
+			'placeholder' => $defaultConfig['time_to_live'],
+			'name' => 'time_to_live',
+			'value' => $config['time_to_live']
+		],
 		'use_filter' => [
 			'type' => 'checkbox',
 			'name' => 'use_filter',
