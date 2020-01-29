@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once('lib/config.php');
 require_once('lib/db.php');
@@ -34,11 +35,14 @@ $imagelist = ($config['newest_first'] === true) ? array_reverse($images) : $imag
 	<link rel="stylesheet" href="node_modules/photoswipe/dist/photoswipe.css" />
 	<link rel="stylesheet" href="node_modules/photoswipe/dist/default-skin/default-skin.css" />
 	<link rel="stylesheet" href="resources/css/style.css" />
+	<?php if ($config['rounded_corners']): ?>
+	<link rel="stylesheet" href="resources/css/rounded.css" />
+	<?php endif; ?>
 </head>
 
 <body class="deselect">
 	<div id="wrapper">
-
+	<?php if( !$config['login_enabled'] || (isset($_SESSION['auth']) && $_SESSION['auth'] === true || !$config['protect_index'])): ?>
 		<!-- Start Page -->
 		<div class="stages" id="start">
 			<?php if ($config['show_gallery']): ?>
@@ -77,11 +81,6 @@ $imagelist = ($config['newest_first'] === true) ? array_reverse($images) : $imag
 				</div>
 				<?php endif; ?>
 
-				<?php if ($config['use_filter']): ?>
-				<a href="#" class="btn imageFilter"><i class="fa fa-magic"></i> <span
-						data-l10n="selectFilter"></span></a>
-				<?php endif; ?>
-
 				<?php if ($config['force_buzzer']): ?>
 				<div id="useBuzzer">
 						<span data-l10n="use_button"></span>
@@ -101,7 +100,7 @@ $imagelist = ($config['newest_first'] === true) ? array_reverse($images) : $imag
 			<?php endif; ?>
 
 			<?php if($config['cups_button']): ?>
-				<a id="cups-button" class="btn" style="position:absolute;left:0;bottom:0;" href="#" target="newwin"><span>CUPS</span></a>
+				<a id="cups-button" class="btn cups-button" href="#" target="newwin"><span>CUPS</span></a>
 			<?php endif; ?>
 		</div>
 
@@ -122,16 +121,19 @@ $imagelist = ($config['newest_first'] === true) ? array_reverse($images) : $imag
 
 		<!-- Loader -->
 		<div class="stages" id="loader">
-			<?php if ($config['previewFromCam']): ?>
-			<video id="video" autoplay></video>
-			<?php endif; ?>
-
 			<div class="loaderInner">
 				<div class="spinner">
 					<i class="fa fa-cog fa-spin"></i>
 				</div>
 
-				<div id="counter"></div>
+				<?php if ($config['previewFromCam']): ?>
+				<video id="video--view" autoplay playsinline></video>
+				<?php endif; ?>
+
+				<div id="counter">
+					<canvas id="video--sensor"</canvas>
+				</div>
+				<div class="cheese"></div>
 				<div class="loading"></div>
 			</div>
 		</div>
@@ -163,6 +165,10 @@ $imagelist = ($config['newest_first'] === true) ? array_reverse($images) : $imag
 					<a href="#" class="btn newcollage"><i class="fa fa-th-large"></i> <span
 							data-l10n="newCollage"></span></a>
 					<?php endif; ?>
+				<?php endif; ?>
+
+				<?php if ($config['use_filter']): ?>
+				<a href="#" class="btn imageFilter"><i class="fa fa-magic"></i> <span data-l10n="selectFilter"></span></a>
 				<?php endif; ?>
 
 				<a href="#" class="btn deletebtn"><i class="fa fa-trash"></i> <span data-l10n="delete"></span></a>
@@ -208,6 +214,10 @@ $imagelist = ($config['newest_first'] === true) ? array_reverse($images) : $imag
 		<div style="position:absolute; bottom:0; right:0;">
 			<img src="resources/img/spacer.png" alt="adminsettings" ondblclick="adminsettings()" />
 		</div>
+	<?php else:
+	header("location: login.php");
+	exit;
+	endif; ?>
 	</div>
 
 	<script type="text/javascript" src="api/config.php"></script>
