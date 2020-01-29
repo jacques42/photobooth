@@ -25,9 +25,11 @@ if ($data['type'] == 'reset') {
     }
 
     if($config['reset_remove_mailtxt']) {
+        $mailAddressesFile = $config['foldersAbs']['data'] . '/mail-addresses.txt';
+
         // delete mail-addresses.txt
-        if(is_file('../mail-addresses.txt')){
-            unlink('../mail-addresses.txt');
+        if(is_file($mailAddressesFile)){
+            unlink($mailAddressesFile);
         }
     }
 
@@ -77,6 +79,19 @@ if ($data['type'] == 'config') {
                 $newConfig[$k] = false;
             }
         }
+    }
+
+    if ($newConfig['login_enabled']) {
+        if (isset($newConfig['login_password']) && !empty($newConfig['login_password'])) {
+            if (!($newConfig['login_password'] === $config['login_password'])) {
+                $hashing = password_hash($newConfig['login_password'], PASSWORD_DEFAULT);
+                $newConfig['login_password'] = $hashing;
+            }
+        } else {
+            $newConfig['login_enabled'] = false;
+        }
+    } else {
+        $newConfig['login_password'] = NULL;
     }
 
     $content = "<?php\n\$config = ". var_export(arrayRecursiveDiff($newConfig, $defaultConfig), true) . ";";

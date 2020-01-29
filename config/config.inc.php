@@ -18,6 +18,11 @@ $config['crop_height'] = '500';
 $config['use_mail'] = false; // mail data needs to be configured
 $config['show_fork'] = true;
 $config['previewFromCam'] = false; // experimental see https://github.com/andreknieriem/photobooth/pull/30
+$config['previewCamTakesPic'] = false; // HTTPS required to use tablet- or mobile phone camera
+$config['previewCamFlipHorizontal'] = true;
+$config['videoWidth'] = '1280';
+$config['videoHeight'] = '720';
+$config['camera_mode'] = 'user'; // possible values are "user" or "environment"
 $config['cups_button'] = false;
 $config['file_format_date'] = false;
 $config['cntdwn_time'] = '5'; // control countdown timer
@@ -33,13 +38,12 @@ $config['take_frame_path'] = '../resources/img/frames/frame.png';
 $config['chroma_keying'] = true;
 $config['use_collage'] = false;
 $config['continuous_collage'] = false;
-$config['color_theme'] = 'default'; // possible values are default, blue-gray, or an array with the corresponding colors (e.g. ['primary' => '#fff', 'secondary'=>'#a1a1a1', 'font'=>'#000'])
 $config['background_image'] = null;
 $config['background_admin'] = null;
 $config['background_chroma'] = null;
 $config['force_buzzer'] = false;
-$config['dark_loader'] = false;
 $config['webserver_ip'] = null;
+$config['rounded_corners'] = false;
 
 // specify key id to use that key to take a picture or collage (e.g. 13 is the enter key)
 // use for example https://keycode.info to get the key code
@@ -69,6 +73,31 @@ $config['is_event'] = false;
 $config['event']['textLeft'] = 'Name 1';
 $config['event']['textRight'] = 'Name 2';
 $config['event']['symbol'] = 'fa-heart-o';
+
+// LOGIN
+$config['login_enabled'] = false;
+$config['login_username'] = 'Photo';
+$config['login_password'] = NULL;
+$config['protect_admin'] = true;
+$config['protect_index'] = false;
+
+// User Interface
+$config['font_size'] = '16px';
+
+// COLORS
+$config['colors']['primary'] = '#e67e22';
+$config['colors']['secondary'] = '#d35400';
+$config['colors']['font'] = '#000000';
+$config['colors']['button_font'] = '#ffffff';
+$config['colors']['start_font'] = '#ffffff';
+$config['colors']['countdown'] = '#000000';
+$config['colors']['background_countdown'] = '#ffffff';
+$config['colors']['cheese'] = '#000000';
+$config['colors']['panel'] = '#ffffff';
+$config['colors']['hover_panel'] = '#fafafa';
+$config['colors']['border'] = '#eeeeee';
+$config['colors']['box'] = '#f8f9fc';
+$config['colors']['gallery_button'] = '#ffffff';
 
 // GALLERY
 // should the gallery list the newest pictures first?

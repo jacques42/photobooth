@@ -81,6 +81,11 @@ $configsetup = [
 			'placeholder' => '',
 			'value' => $config['collage_key']
 		],
+		'collage_limit' => [
+			'type' => 'hidden',
+			'name' => 'collage_limit',
+			'value' => $config['collage_limit']
+		],
 		'force_buzzer' => [
 			'type' => 'checkbox',
 			'name' => 'force_buzzer',
@@ -163,6 +168,38 @@ $configsetup = [
 			'type' => 'checkbox',
 			'name' => 'previewFromCam',
 			'value' => $config['previewFromCam']
+		],
+		'previewCamTakesPic' => [
+			'type' => 'checkbox',
+			'name' => 'previewCamTakesPic',
+			'value' => $config['previewCamTakesPic']
+		],
+		'previewCamFlipHorizontal' => [
+			'type' => 'checkbox',
+			'name' => 'previewCamFlipHorizontal',
+			'value' => $config['previewCamFlipHorizontal']
+		],
+		'videoWidth' => [
+			'type' => 'input',
+			'name' => 'videoWidth',
+			'placeholder' => $defaultConfig['videoWidth'],
+			'value' => $config['videoWidth']
+		],
+		'videoHeight' => [
+			'type' => 'input',
+			'name' => 'videoHeight',
+			'placeholder' => $defaultConfig['videoHeight'],
+			'value' => $config['videoHeight']
+		],
+		'camera_mode' => [
+			'type' => 'select',
+			'name' => 'camera_mode',
+			'placeholder' => $defaultConfig['camera_mode'],
+			'options' => [
+				'user' => 'Front facing camera',
+				'environment' => 'Back facing camera'
+			],
+			'value' => $config['camera_mode']
 		]
 	],
 	'jpeg_quality' => [
@@ -186,15 +223,11 @@ $configsetup = [
 		]
 	],
 	'user_interface' => [
-		'color_theme' => [
-			'type' => 'select',
-			'name' => 'color_theme',
-			'placeholder' => $defaultConfig['color_theme'],
-			'options' => [
-				'default' => 'default',
-				'blue-gray' => 'blue-gray'
-			],
-			'value' => $config['color_theme']
+		'font_size' => [
+			'type' => 'input',
+			'name' => 'font_size',
+			'placeholder' => $defaultConfig['font_size'],
+			'value' => $config['font_size']
 		],
 		'background_image' => [
 			'type' => 'input',
@@ -214,11 +247,6 @@ $configsetup = [
 			'placeholder' => 'url(../img/bg.jpg)',
 			'value' => $config['background_chroma']
 		],
-		'dark_loader' => [
-			'type' => 'checkbox',
-			'name' => 'dark_loader',
-			'value' => $config['dark_loader']
-		],
 		'show_fork' => [
 			'type' => 'checkbox',
 			'name' => 'show_fork',
@@ -228,6 +256,118 @@ $configsetup = [
 			'type' => 'checkbox',
 			'name' => 'cups_button',
 			'value' => $config['cups_button']
+		],
+		'rounded_corners' => [
+			'type' => 'checkbox',
+			'name' => 'rounded_corners',
+			'value' => $config['rounded_corners']
+		],
+		'colors_primary' => [
+			'type' => 'color',
+			'name' => 'colors[primary]',
+			'placeholder' => $defaultConfig['colors']['primary'],
+			'value' => $config['colors']['primary']
+		],
+		'colors_secondary' => [
+			'type' => 'color',
+			'name' => 'colors[secondary]',
+			'placeholder' => $defaultConfig['colors']['secondary'],
+			'value' => $config['colors']['secondary']
+		],
+		'colors_font' => [
+			'type' => 'color',
+			'name' => 'colors[font]',
+			'placeholder' => $defaultConfig['colors']['font'],
+			'value' => $config['colors']['font']
+		],
+		'colors_button_font' => [
+			'type' => 'color',
+			'name' => 'colors[button_font]',
+			'placeholder' => $defaultConfig['colors']['button_font'],
+			'value' => $config['colors']['button_font']
+		],
+		'colors_start_font' => [
+			'type' => 'color',
+			'name' => 'colors[start_font]',
+			'placeholder' => $defaultConfig['colors']['start_font'],
+			'value' => $config['colors']['start_font']
+		],
+		'colors_panel' => [
+			'type' => 'color',
+			'name' => 'colors[panel]',
+			'placeholder' => $defaultConfig['colors']['panel'],
+			'value' => $config['colors']['panel']
+		],
+		'colors_hover_panel' => [
+			'type' => 'color',
+			'name' => 'colors[hover_panel]',
+			'placeholder' => $defaultConfig['colors']['hover_panel'],
+			'value' => $config['colors']['hover_panel']
+		],
+		'colors_border' => [
+			'type' => 'color',
+			'name' => 'colors[border]',
+			'placeholder' => $defaultConfig['colors']['border'],
+			'value' => $config['colors']['border']
+		],
+		'colors_box' => [
+			'type' => 'color',
+			'name' => 'colors[box]',
+			'placeholder' => $defaultConfig['colors']['box'],
+			'value' => $config['colors']['box']
+		],
+		'colors_gallery_button' => [
+			'type' => 'color',
+			'name' => 'colors[gallery_button]',
+			'placeholder' => $defaultConfig['colors']['gallery_button'],
+			'value' => $config['colors']['gallery_button']
+		],
+		'colors_countdown' => [
+			'type' => 'color',
+			'name' => 'colors[countdown]',
+			'placeholder' => $defaultConfig['colors']['countdown'],
+			'value' => $config['colors']['countdown']
+		],
+		'colors_background_countdown' => [
+			'type' => 'color',
+			'name' => 'colors[background_countdown]',
+			'placeholder' => $defaultConfig['colors']['background_countdown'],
+			'value' => $config['colors']['background_countdown']
+		],
+		'colors_cheese' => [
+			'type' => 'color',
+			'name' => 'colors[cheese]',
+			'placeholder' => $defaultConfig['colors']['cheese'],
+			'value' => $config['colors']['cheese']
+		]
+	],
+	'login' => [
+		'login_enabled' => [
+			'type' => 'checkbox',
+			'name' => 'login_enabled',
+			'value' => $config['login_enabled']
+		],
+		'username' => [
+			'type' => 'input',
+			'placeholder' => 'Photo',
+			'name' => 'login_username',
+			'value' => $config['login_username']
+		],
+		'password' => [
+			'type' => 'input',
+			'placeholder' => NULL,
+			'name' => 'login_password',
+			'value' => $config['login_password']
+		],
+		'protect_admin' => [
+			'type' => 'checkbox',
+			'name' => 'protect_admin',
+			'value' => $config['protect_admin']
+		],
+		'protect_index' => [
+			'type' => 'checkbox',
+			'name' => 'protect_index',
+			'value' => $config['protect_index']
 		]
 	],
 	'folders' => [
@@ -245,7 +385,7 @@ $configsetup = [
 		],
 		'print' => [
 			'type' => 'input',
-			'placeholder' => 'print',
+			'name' => 'folders[print]',
 			'placeholder' => $defaultConfig['folders']['print'],
 			'value' => $config['folders']['print']
 		],
