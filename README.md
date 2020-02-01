@@ -14,7 +14,8 @@ Hardware Trigger:
 - Check https://www.npmjs.com/package/rpio for additional settings required on the Pi
 
 Remote Trigger:
-- Any websocket client can connect to the server. Send "start" on channel "takepicture" to trigger.
+- Any websocket / socket.io client can connect to the server
+- Send "start" on channel "takepicture" to trigger.
 
 Requires node.js on the photobooth webserver. 
 
