@@ -7,10 +7,11 @@ I do maintain iPad2 compatibility of the code, in order to be able to use iPad2 
 ## Remote Buzzer / Remote Trigger
 Added server side trigger to take a picture based on socket.io. Server runs a websocket socket.io server, for clients to connect. The server will notify clients to trigger a picture (start thrill).
 
-Check admin settings area "Remote Buzzer" for settings.
+Check admin settings area "Remote Buzzer" for settings. Make sure you set the IP address of the Photobooth web server.
 
 Hardware Trigger:
 - On RaspPi, the server can connect to a GPIO pin and will watch for a PIN_DOWN event (pull to ground). 
+- Check https://www.npmjs.com/package/rpio for additional settings required on the Pi
 
 Remote Trigger:
 - Any websocket client can connect to the server. Send "start" on channel "takepicture" to trigger.
