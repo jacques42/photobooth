@@ -24,6 +24,8 @@ const photoBooth = (function () {
         currentCollageFile = '',
         imgFilter = config.default_imagefilter;
 
+    var io_client;
+
     const modal = {
         open: function (selector) {
             $(selector).addClass('modal--show');
@@ -82,6 +84,31 @@ const photoBooth = (function () {
 
         resultPage.hide();
         startPage.addClass('open');
+
+	if (config.remotebuzzer_enabled) {
+	    if (config.webserver_ip)
+	    {
+		io_client =  io("http://" + config.webserver_ip + ":" + config.remotebuzzer_port);
+
+		console.log(' Remote buzzer connecting to http://' + config.webserver_ip + ":" + config.remotebuzzer_port);
+
+		io_client.on('takepicture', function (data) {
+		    switch (data) {
+		    case 'start':
+			public.thrill('photo');
+			break;
+		    }
+		});
+
+		io_client.on('connect_failed', function() {
+		    console.log(' Remote buzzer unable to connect');
+		});
+	    } else
+	    {
+		console.log(' Remote buzzer unable to connect - webserver_ip not defined');
+	    }
+
+	}
     }
 
     public.openNav = function () {
@@ -133,6 +160,11 @@ const photoBooth = (function () {
     public.thrill = function (photoStyle) {
         public.closeNav();
         public.reset();
+
+	if (config.remotebuzzer_enabled) {
+	    io_client.emit('takepicture', 'in progress');
+	}
+
 
         if (currentCollageFile && nextCollageNumber) {
             photoStyle = 'collage';
@@ -297,6 +329,10 @@ const photoBooth = (function () {
                 });
             },
         });
+
+	if (config.remotebuzzer_enabled) {
+	    io_client.emit('takepicture', 'completed');
+	}
     }
 
     // Render Picture after taking

@@ -146,3 +146,9 @@ $config['jpeg_quality_image'] = 80;
 $config['reset_remove_images'] = true;
 $config['reset_remove_mailtxt'] = true;
 $config['reset_remove_config'] = true;
+
+// WEBSOCKET REMOTE BUTTON PRESS
+$config['remotebuzzer_enabled'] = false;
+$config['remotebuzzer_port'] = 4711;
+$config['remotebuzzer_pin'] = 40;
+$config['remotebuzzer_nodebin'] = "/usr/bin/node";
