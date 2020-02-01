@@ -21,5 +21,5 @@ Requires node.js on the photobooth webserver.
 
 
 ## Changelog
-2020-02-02: Initial version Remote Buzzer
-2020-01:    Pulled updated from 2.1.0 release
+- 2020-02-02: Initial version Remote Buzzer
+- 2020-01:    Pulled updated from 2.1.0 release
