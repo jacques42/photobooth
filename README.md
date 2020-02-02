@@ -19,9 +19,10 @@ Remote Trigger:
 
 Requires node.js on the photobooth webserver. 
 
-For debugging switch on dev settings in photobooth. Logs will be filed in "io_server.log" in the web server root directory for photobooth (e.g. /var/www/html/photobooth/io_server.log). Clients will log to browser console. 
+For debugging switch on dev settings in photobooth. Logs will be written to "data/tmp/io_server.log"  directory for photobooth. Clients will log to browser console. 
 
 
 ## Changelog
-- 2020-02-02: Initial version Remote Buzzer
-- 2020-01:    Pulled updated from 2.1.0 release
+- 2020-02-02: All languages, restart servers at config change
+- 2020-02-01: Initial version Remote Buzzer
+- 2020-01-XX: Pulled updated from 2.1.0 release
