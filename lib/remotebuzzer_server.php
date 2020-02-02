@@ -5,7 +5,7 @@
 	{
 		if ($config['dev'])
 		{
-			$logfile = "io_server.log";
+			$logfile = $config['folders']['tmp']."/io_server.log";
 		}
 		else
 		{ $logfile = "/dev/null"; }
