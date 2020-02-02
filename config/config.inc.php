@@ -150,5 +150,5 @@ $config['reset_remove_config'] = true;
 // WEBSOCKET REMOTE BUTTON PRESS
 $config['remotebuzzer_enabled'] = false;
 $config['remotebuzzer_port'] = 4711;
-$config['remotebuzzer_pin'] = 40;
+$config['remotebuzzer_pin'] = 0;
 $config['remotebuzzer_nodebin'] = "/usr/bin/node";
