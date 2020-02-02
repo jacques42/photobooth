@@ -26,3 +26,6 @@ For debugging switch on dev settings in photobooth. Logs will be written to "dat
 - 2020-02-02: All languages, restart servers at config change
 - 2020-02-01: Initial version Remote Buzzer
 - 2020-01-XX: Pulled updated from 2.1.0 release
+
+## Todo
+- Trigger for photo collage (hold > 2 sec) (with and w/o interruption)
