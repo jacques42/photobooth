@@ -12,8 +12,7 @@
 
 		print ("\t<!-- Remote Buzzer Enabled --- starting server -->\n");
 
-		/* Start background process. Needs to be cleaned up / portable on WIN / NIX and more robust */
-   		proc_close(proc_open ($config['remotebuzzer_nodebin']." resources/js/remotebuzzer_server.js ".$config['remotebuzzer_port']." ".$config['remotebuzzer_pin']." 1>>".$logfile." 2>&1 &", array(), $foo));
+   		proc_close(proc_open ($config['remotebuzzer_nodebin']." resources/js/remotebuzzer_server.js ".$config['remotebuzzer_port']." ".$config['remotebuzzer_pin']." ".$config['folders']['tmp']." 1>>".$logfile." 2>&1 &", array(), $foo));
 			
 
 	} else {

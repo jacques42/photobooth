@@ -1,19 +1,44 @@
-/* HANDLE EXCEPTIONS */
-process.on('uncaughtException', (err, origin) => {
-    console.log('socket.io server [',myPid,']: uncaught error: ', err.message);
-    console.log('socket.io server [',myPid,']: Exiting process');
-    process.exit();
-});
-
 /* PARSE COMMAND LINE */
 var myArgs = process.argv.slice(2);
 
 var socketPort = myArgs[0],
-    pinNum = myArgs[1];
+    pinNum = myArgs[1],
+    $myPIDFileFolder = myArgs[2];
 
 var myPid = process.pid;
 
 console.log('socket.io server [',myPid,']: Requested to start on port ',socketPort, ", Pin ", pinNum);
+
+
+/* WRITE PROCESS PID FILE */
+const fs = require('fs');
+var $filename = $myPIDFileFolder+"/remotebuzzer_server.pid";
+
+fs.writeFile($filename, myPid, function(err) {
+    if(err) {
+	console.log('socket.io server [',myPid,']: Unable to write PID file ', $filename, ' Error:', err.message);
+	process.exit();
+    } else
+    {
+	console.log('socket.io server [',myPid,']: PID file created ', $filename);
+    }
+});
+
+/* HANDLE EXCEPTIONS */
+process.on('uncaughtException', (err, origin) => {
+    console.log('socket.io server [',myPid,']: uncaught error: ', err.message);
+
+    fs.unlink($filename, function(err) {
+	if (err) {
+	    console.log('socket.io server [',myPid,']: Error while trying to delete PID file ', err.message);
+	} else {
+	    console.log('socket.io server [',myPid,']: Removed PID file ',$filename);
+	}
+    }); 
+    
+    console.log('socket.io server [',myPid,']: Exiting process');
+    process.exit();
+});
 
 /* START WEBSOCKET SERVER */
 const io_server = require('socket.io')(socketPort);
