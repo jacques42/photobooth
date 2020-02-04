@@ -92,11 +92,15 @@ const photoBooth = (function () {
 
 		console.log(' Remote buzzer connecting to http://' + config.webserver_ip + ":" + config.remotebuzzer_port);
 
-		io_client.on('takepicture', function (data) {
+		io_client.on('photobooth-socket', function (data) {
 		    switch (data) {
-		    case 'start':
+		    case 'start-picture':
 			public.thrill('photo');
 			break;
+		    case 'start-collage':
+			public.thrill('collage');
+			break;
+
 		    }
 		});
 
@@ -162,7 +166,7 @@ const photoBooth = (function () {
         public.reset();
 
 	if (config.remotebuzzer_enabled) {
-	    io_client.emit('takepicture', 'in progress');
+	    io_client.emit('photobooth-socket', 'in progress');
 	}
 
 
@@ -254,6 +258,9 @@ const photoBooth = (function () {
                         public.thrill('collage');
                     }, 1000);
                 } else {
+		    if (config.remotebuzzer_enabled) {
+			io_client.emit('photobooth-socket', 'collage-wait-for-next');
+		    }
                     $('<a class="btn" href="#">' + L10N.nextPhoto + '</a>').appendTo('.loading').click(function(ev) {
                         ev.preventDefault();
 
@@ -331,7 +338,7 @@ const photoBooth = (function () {
         });
 
 	if (config.remotebuzzer_enabled) {
-	    io_client.emit('takepicture', 'completed');
+	    io_client.emit('photobooth-socket', 'completed');
 	}
     }
 
