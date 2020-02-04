@@ -17,7 +17,7 @@ Configuration
 *************
 Check photobooth admin settings area for subsection "Remote Buzzer" and detailed settings. Make sure to set the IP address of the Photobooth web server.
 
-For debugging switch on dev settings in photobooth. Logs will be written to "data/tmp/io_server.log"  directory for photobooth. Clients will log to browser console. 
+For debugging switch on dev settings in photobooth. Server logs will be written to the data-tmp directory of the photobooth installation (i.e. "data/tmp/io_server.log"). Clients will log server communication information to the browser console. 
 
 ***************
 Hardware Buzzer
