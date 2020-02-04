@@ -5,7 +5,7 @@ A Photobooth web interface for Raspberry Pi and Windows. I've enhanced the code 
 Minor changes for  iPad2 compatibility of the code, in order to be able to use iPad2 on iOS 9.3.5 (latest version). Webkit6 is supported on iOS9.3.5 but on that platform lacks implementation of key word 'let' and arrow functions syntax.
 
 ## Hardware Buzzer / Remote Trigger
-Added server side (remote) trigger to take a picture. The trigger server will notify clients to either take a picture or a collage. It's using socket.io to maintain state and connectivity. Requires node.js on the photobooth webserver.
+Implements a server side (remote) trigger mechanism for photobooth. The trigger server will notify photobooth clients to either take a picture or a collage - similar to a button press on the screen or a key press on the client machine attached keyboard. The trigger server uses socket.io to maintain connectivity to the photobooth clients. Requires node.js on the photobooth webserver.
 
 ************
 Installation
@@ -45,6 +45,7 @@ The trigger server controls and coordinates sending commands via socket.io to th
 - 2020-02-04: Collage via long button press, robustness
 - 2020-02-02: All languages, restart trigger server at config change
 - 2020-02-01: Initial version Remote Buzzer
-- 2020-01-XX: Pulled updated from 2.1.0 release
+- 2020-01-XX: Pulled updates from 2.1.0 release
 
 ## Todo
+- Enable Trigger Server on Windows platform (not very high on my priority list)
