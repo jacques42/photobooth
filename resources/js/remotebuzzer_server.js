@@ -60,6 +60,8 @@ io_server.on('connection', function (client) {
 	    trigger_armed = true;
 	    collageInProgress = false;
 	    ListOfClientIDs.splice(ListOfClientIDs.indexOf(client.id),1);
+	    if (!ListOfClientIDs.length)
+		io_server.emit('photobooth-socket','completed');
 	    break;
 	case 'in progress':
 	    trigger_armed = false;
