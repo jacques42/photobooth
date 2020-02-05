@@ -95,9 +95,11 @@ const photoBooth = (function () {
 		io_client.on('photobooth-socket', function (data) {
 		    switch (data) {
 		    case 'start-picture':
+			$('.resultInner').removeClass('show');	
 			public.thrill('photo');
 			break;
 		    case 'start-collage':
+			$('.resultInner').removeClass('show');	
 			public.thrill('collage');
 			break;
 
