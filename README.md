@@ -7,11 +7,13 @@ Implements a server side (remote) trigger mechanism for photobooth. The trigger 
 ************
 Installation
 ************
-> git clone https://github.com/jacques42/photobooth photobooth
-> git checkout socketio-HW-button
-> git submodule update --init
-> yarn install
-> yarn build
+```
+git clone https://github.com/jacques42/photobooth photobooth
+git checkout socketio-HW-button
+git submodule update --init
+yarn install
+yarn build
+```
 Please  take care of the webserver setup manually.
 
 *************
