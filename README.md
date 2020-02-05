@@ -19,7 +19,9 @@ Please  take care of the webserver setup manually.
 *************
 Configuration
 *************
-Check photobooth admin settings area for subsection "Remote Buzzer" and detailed settings. Make sure to set the IP address of the Photobooth web server.
+Check photobooth admin settings area for subsection "Remote Buzzer" and detailed settings. Set "Raspberry Pi Pin Number" to 0 (zero) for to disable GPIO monitoring functionality.
+
+**Make sure to set the IP address of the Photobooth web server in the admin settings**
 
 For debugging switch on dev settings in photobooth. Server logs will be written to the data-tmp directory of the photobooth installation (i.e. "data/tmp/io_server.log"). Clients will log server communication information to the browser console. 
 
@@ -30,8 +32,6 @@ If the web server is a RaspberryPi, the trigger server can connect to a GPIO pin
 
 - Short button press (<= 2 sec) will trigger a photo in photobooth
 - Long button press (> 2 sec) will trigger a collage in photobooth. If in photobooth collage is configured with interruption, any subsequent button press will trigger the next collage picture. 
-
-The button is disabled while photobooth executes a task. In the admin settings, set "Raspberry Pi Pin Number" to 0 (zero) for to disable this whole functionality.
 
 Check https://www.npmjs.com/package/rpio for additional settings required on the Pi
 
