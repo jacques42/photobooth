@@ -4,7 +4,7 @@ A Photobooth web interface for Raspberry Pi and Windows.
 Original Repo: https://github.com/andreknieriem/photobooth<br>
 Original Readme: https://github.com/andreknieriem/photobooth/blob/master/README.md
 
-# Changes in maintained in this repo
+# Changes
 Based on master version 2.1.0 I have enhanced the code for my needs.
 
 ## Hardware Buzzer / Remote Trigger
