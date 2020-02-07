@@ -263,7 +263,7 @@ const photoBooth = (function () {
         $('.spinner').show();
         $('.loading').text(photoStyle === 'photo' ? L10N.busy : L10N.busyCollage);
 
-        if (photoStyle === 'photo') {
+/*        if (photoStyle === 'photo') {
             const preloadImage = new Image();
             preloadImage.onload = function() {
                 $('#loader').css('background-image', `url(${tempImageUrl})`);
@@ -271,7 +271,7 @@ const photoBooth = (function () {
             }
             preloadImage.src = tempImageUrl;
         }
-
+*/
         $.ajax({
             method: 'POST',
             url: 'api/applyEffects.php',
