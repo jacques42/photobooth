@@ -24,6 +24,8 @@ const photoBooth = (function () {
         currentCollageFile = '',
         imgFilter = config.default_imagefilter;
 
+    var io_client;
+
     const modal = {
         open: function (selector) {
             $(selector).addClass('modal--show');
@@ -82,6 +84,37 @@ const photoBooth = (function () {
 
         resultPage.hide();
         startPage.addClass('open');
+
+	if (config.remotebuzzer_enabled) {
+	    if (config.webserver_ip)
+	    {
+		io_client =  io("http://" + config.webserver_ip + ":" + config.remotebuzzer_port);
+
+		console.log(' Remote buzzer connecting to http://' + config.webserver_ip + ":" + config.remotebuzzer_port);
+
+		io_client.on('photobooth-socket', function (data) {
+		    switch (data) {
+		    case 'start-picture':
+			$('.resultInner').removeClass('show');	
+			public.thrill('photo');
+			break;
+		    case 'start-collage':
+			$('.resultInner').removeClass('show');	
+			public.thrill('collage');
+			break;
+
+		    }
+		});
+
+		io_client.on('connect_failed', function() {
+		    console.log(' Remote buzzer unable to connect');
+		});
+	    } else
+	    {
+		console.log(' Remote buzzer unable to connect - webserver_ip not defined');
+	    }
+
+	}
     }
 
     public.openNav = function () {
@@ -133,6 +166,11 @@ const photoBooth = (function () {
     public.thrill = function (photoStyle) {
         public.closeNav();
         public.reset();
+
+	if (config.remotebuzzer_enabled) {
+	    io_client.emit('photobooth-socket', 'in progress');
+	}
+
 
         if (currentCollageFile && nextCollageNumber) {
             photoStyle = 'collage';
@@ -222,6 +260,9 @@ const photoBooth = (function () {
                         public.thrill('collage');
                     }, 1000);
                 } else {
+		    if (config.remotebuzzer_enabled) {
+			io_client.emit('photobooth-socket', 'collage-wait-for-next');
+		    }
                     $('<a class="btn" href="#">' + L10N.nextPhoto + '</a>').appendTo('.loading').click(function(ev) {
                         ev.preventDefault();
 
@@ -263,7 +304,7 @@ const photoBooth = (function () {
         $('.spinner').show();
         $('.loading').text(photoStyle === 'photo' ? L10N.busy : L10N.busyCollage);
 
-        if (photoStyle === 'photo') {
+/*        if (photoStyle === 'photo') {
             const preloadImage = new Image();
             preloadImage.onload = function() {
                 $('#loader').css('background-image', `url(${tempImageUrl})`);
@@ -271,7 +312,7 @@ const photoBooth = (function () {
             }
             preloadImage.src = tempImageUrl;
         }
-
+*/
         $.ajax({
             method: 'POST',
             url: 'api/applyEffects.php',
@@ -297,6 +338,10 @@ const photoBooth = (function () {
                 });
             },
         });
+
+	if (config.remotebuzzer_enabled) {
+	    io_client.emit('photobooth-socket', 'completed');
+	}
     }
 
     // Render Picture after taking

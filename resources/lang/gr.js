@@ -165,5 +165,10 @@ const L10N = {
     'logout': 'Logout',
     'admin_panel': 'Admin panel',
     'protect_admin': 'Protect admin panel',
-    'protect_index': 'Protect start screen'
+    'protect_index': 'Protect start screen',
+    'remotebuzzer': 'Remote Buzzer',
+    'remotebuzzer_enabled': 'Enabled',
+    'remotebuzzer_port': 'Server Port',
+    'remotebuzzer_pin': 'Raspberry Pi pin number (0 to disable)',
+    'remotebuzzer_nodebin': 'Node.js Binary Path'
 }

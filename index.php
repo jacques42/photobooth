@@ -235,5 +235,7 @@ $imagelist = ($config['newest_first'] === true) ? array_reverse($images) : $imag
 	<script type="text/javascript" src="resources/js/theme.js"></script>
 	<script type="text/javascript" src="resources/js/core.js"></script>
 	<script type="text/javascript" src="resources/lang/<?php echo $config['language']; ?>.js"></script>
+
+	<?php require_once('lib/remotebuzzer_server.php'); ?>
 </body>
 </html>
