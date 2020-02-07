@@ -47,6 +47,11 @@ The trigger server controls and coordinates sending commands via socket.io to th
 ## iPad 2 compatibility
 Minor changes for  iPad2 compatibility of the code, in order to be able to use iPad2 on iOS 9.3.5 (latest version). Webkit6 is supported on iOS9.3.5 but on that platform lacks implementation of key word 'let' and arrow functions syntax.
 
+## Performance
+Changes for slightly better performance on Raspberry Pi in my most common use-case, which is no filters, no chroma-keying, no frames are being rendered:  
+- Removed picture preview feature. That way on an iPad2 the screen renders faster and the flow seems smooth.  Draw-back is the screen remains black if there is heavy processing of the picture (core.js -> public.processPic). But I never us modifications on the box as all this much better can be done later and offline. Hence for me this is the better setup.
+- Setting the JPEG quality to -1 in the settings and no filters, etc. active now will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. PHP imagejpeg()
+
 ## Changelog
 - 2020-02-04: Collage via long button press, robustness
 - 2020-02-02: All languages, restart trigger server at config change
