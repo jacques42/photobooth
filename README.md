@@ -53,6 +53,9 @@ The trigger server controls and coordinates sending commands via socket.io to th
 ## iPad 2 compatibility
 Minor changes for  iPad2 compatibility of the code, in order to be able to use iPad2 on iOS 9.3.5 (latest version). Webkit6 is supported on iOS9.3.5 but on that platform lacks implementation of key word 'let' and arrow functions syntax.
 
+## JPEG meta-data (i.e. EXIF)
+During post-processing PHP GD drops all the meta data from the JPEG. Therefore I implemented the use of the perl-based exiftool,  to copy JPEG meta (e.g. EXIF) from the original file to the new file, after GD processing.  exiftool can be configured through the admin settings. Not tested on Windows. 
+
 ## Performance
 Changes for slightly better performance on Raspberry Pi in my most common use-case, which is no filters, no chroma-keying, no frames are being rendered:  
 - Removed picture preview feature. That way on an iPad2 the screen renders faster and the flow seems smooth.  Draw-back is the screen remains black if there is heavy processing of the picture (core.js -> public.processPic). But I never us modifications on the box as all this much better can be done later and offline. Hence for me this is the better setup.
