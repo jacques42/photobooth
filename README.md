@@ -36,8 +36,8 @@ Hardware Buzzer
 ***************
 If the web server is a RaspberryPi, the trigger server can connect to a GPIO pin and will watch for a PIN_DOWN event (pull to ground). This will initiate a socket.io message to the photobooth client, to trigger the action (thrill).
 
-- Short button press (<= 2 sec) will trigger a photo in photobooth
-- Long button press (> 2 sec) will trigger a collage in photobooth. If in photobooth collage is configured with interruption, any subsequent button press will trigger the next collage picture. 
+- Short button press/release (<= 2 sec) will trigger a photo in photobooth
+- Long button press/release (> 2 sec) will trigger a collage in photobooth. If collage is configured with interruption, any subsequent button press will trigger the next collage picture. 
 
 Check https://www.npmjs.com/package/rpio for additional settings required on the Pi
 
