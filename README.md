@@ -44,7 +44,7 @@ Check https://www.npmjs.com/package/rpio for additional settings required on the
 **************
 Remote Trigger
 **************
-The trigger server controls and coordinates sending commands via socket.io to the photobooth client. Next to a hardware button, any socket.io client can connect to the trigger server over the network, and send a trigger command. This gives full flexibility to integrate other backend systems for trigger sinals.
+The trigger server controls and coordinates sending commands via socket.io to the photobooth client. Next to a hardware button, any socket.io client can connect to the trigger server over the network, and send a trigger command. This gives full flexibility to integrate other backend systems for trigger signals.
 
 - Channel: `photobooth-socket`
 - Commands: `start-picture`, `start-collage`
