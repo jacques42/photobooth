@@ -152,3 +152,7 @@ $config['remotebuzzer_enabled'] = false;
 $config['remotebuzzer_port'] = 4711;
 $config['remotebuzzer_pin'] = 0;
 $config['remotebuzzer_nodebin'] = "/usr/bin/node";
+
+// PRESERVE EXIF
+$config['exiftool']['cmd'] = null;
+$config['exiftool']['msg'] = null;

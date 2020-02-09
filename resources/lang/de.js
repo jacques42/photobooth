@@ -171,5 +171,7 @@ const L10N = {
     'remotebuzzer_enabled': 'Server aktiviert',
     'remotebuzzer_port': 'Server Port',
     'remotebuzzer_pin': 'Raspberry Pi PIN Nummer (0 = disabled)',
-    'remotebuzzer_nodebin': 'Pfad zum Node.js Binary'
+    'remotebuzzer_nodebin': 'Pfad zum Node.js Binary',
+    'commands_exiftool_cmd': 'exiftool command',
+    'commands_exiftool_msg': 'Success message for EXIF preservation'
 }
