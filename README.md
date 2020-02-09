@@ -62,6 +62,7 @@ Changes for slightly better performance on Raspberry Pi in my most common use-ca
 - Setting the JPEG quality to -1 in the settings and with no post-processing active (e.g. no filters, no frame, no polaroid, no chromakeying), now it will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. processing via PHP imagejpeg() and GD. Also avoids processing via *exiftool*, it is not required when the original file is retained.
 
 ## Changelog
+- 2020-02-09: Retain JPEG meta data (e.g. EXIF)
 - 2020-02-07: Small performance improvements for iPad2 / simple use-case scenario
 - 2020-02-04: Collage via long button press, robustness
 - 2020-02-02: All languages, restart trigger server at config change
