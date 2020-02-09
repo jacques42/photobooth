@@ -14,7 +14,7 @@ Implements a server side (remote) trigger mechanism for photobooth. The trigger 
 Installation
 ************
 ```
-apt-get install apt-get install libimage-exiftool-perl
+apt-get install libimage-exiftool-perl
 git clone https://github.com/jacques42/photobooth photobooth
 git submodule update --init
 yarn install
