@@ -103,6 +103,12 @@ $configsetup = [
 			'name' => 'cheese_time',
 			'value' => $config['cheese_time']
 		],
+		'showimage_whenprocessing' => [
+			'type' => 'checkbox',
+			'name' => 'image_preview_before_processing',
+			'value' => $config['image_preview_before_processing']
+		],
+
 		'use_filter' => [
 			'type' => 'checkbox',
 			'name' => 'use_filter',

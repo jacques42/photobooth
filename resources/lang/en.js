@@ -80,6 +80,7 @@ const L10N = {
     'show_fork': 'Show Fork Badge',
     'general_cntdwn_time': 'Countdown timer in seconds',
     'general_cheese_time': 'Cheeeeeeeese!-Timer in milliseconds',
+    'showimage_whenprocessing': 'Preload and show image during filter processing',
     'previewFromCam': 'See preview by device cam',
     'previewCamTakesPic': 'Device cam takes picture',
     'newest_first': 'Show latest images first',

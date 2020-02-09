@@ -80,6 +80,7 @@ const L10N = {
     'show_fork': 'Affichez le badge de la page Github',
     'general_cntdwn_time': 'Compte à rebours en secondes',
     'general_cheese_time': 'Définir le temps pour le Cheeeeeeeese! en millisecondes',
+    'showimage_whenprocessing': 'Preload image before processing',
     'previewFromCam': 'Voir l\'aperçu par caméra',
     'previewCamTakesPic': 'Device cam takes picture',
     'newest_first': 'Affichez les dernières images en premier',

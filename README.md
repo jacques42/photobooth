@@ -57,9 +57,9 @@ Minor changes for  iPad2 compatibility of the code, in order to be able to use i
 During post-processing PHP GD drops all the meta data from the JPEG. Therefore I implemented the use of the perl-based exiftool,  to copy JPEG meta (e.g. EXIF) from the original file to the new file, after GD processing.  exiftool can be configured through the admin settings. Not tested on Windows. 
 
 ## Performance
-Changes for slightly better performance on Raspberry Pi in my most common use-case, which is no filters, no chroma-keying, no frames are being rendered:  
-- Removed picture preview feature. That way on an iPad2 the screen renders faster and the flow seems smooth.  Draw-back is the screen remains black if there is heavy processing of the picture (core.js -> public.processPic). But I never us modifications on the box as all this much better can be done later and offline. Hence for me this is the better setup.
-- Setting the JPEG quality to -1 in the settings and no filters, etc. active now will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. PHP imagejpeg()
+Changes for slightly better performance on Raspberry Pi in my most common use-cases:
+- Configurable on/off picture preview while processing filters. That way on an iPad2 the screen renders faster and the flow seems more smooth, in particular if there is no  post-processing going on. Can be configured in the admin settings via *"Preload and show image during filter processing"*
+- Setting the JPEG quality to -1 in the settings and with no post-processing active (e.g. no filters, no frame, no polaroid, no chromakeying), now it will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. processing via PHP imagejpeg() and GD. Also avoids processing via *exiftool*, it is not required when the original file is retained.
 
 ## Changelog
 - 2020-02-07: Small performance improvements for iPad2 / simple use-case scenario

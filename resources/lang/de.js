@@ -80,6 +80,7 @@ const L10N = {
     'show_fork': 'Fork Logo anzeigen',
     'general_cntdwn_time': 'Countdown Timer in Sekunden',
     'general_cheese_time': 'Cheeeeeeeese!-Timer in Millisekunden',
+    'showimage_whenprocessing': 'Bild laden bevor Filter berechnet werden',
     'previewFromCam': 'Vorschau aus der Gerätekamera anzeigen',
     'previewCamTakesPic': 'Gerätekamera zur Bildaufnahme verwenden',
     'newest_first': 'Neueste Bilder zuerst anzeigen',
