@@ -14,13 +14,13 @@ Implements a server side (remote) trigger mechanism for photobooth. The trigger 
 Installation
 ************
 ```
+apt-get install apt-get install libimage-exiftool-perl
 git clone https://github.com/jacques42/photobooth photobooth
-git checkout socketio-HW-button
 git submodule update --init
 yarn install
 yarn build
 ```
-Please  take care of the webserver setup manually.
+Please  take care of the webserver setup manually. The `install-raspbian.sh` in this repo currently does not work.
 
 *************
 Configuration
@@ -46,20 +46,20 @@ Remote Trigger
 **************
 The trigger server controls and coordinates sending commands via socket.io to the photobooth client. Next to a hardware button, any socket.io client can connect to the trigger server over the network, and send a trigger command. This gives full flexibility to integrate other backend systems for trigger sinals.
 
-- Channel: "photobooth-socket"
-- Commands: "start-picture" or "start-collage"
-- Response: "completed"  will be emitted to the client, once photobooth finished the task
+- Channel: `photobooth-socket`
+- Commands: `start-picture`, `start-collage`
+- Response: `completed`  will be emitted to the client, once photobooth finished the task
 
 ## iPad 2 compatibility
 Minor changes for  iPad2 compatibility of the code, in order to be able to use iPad2 on iOS 9.3.5 (latest version). Webkit6 is supported on iOS9.3.5 but on that platform lacks implementation of key word 'let' and arrow functions syntax.
 
 ## JPEG meta-data (i.e. EXIF)
-During post-processing PHP GD drops all the meta data from the JPEG. Therefore I implemented the use of the perl-based exiftool,  to copy JPEG meta (e.g. EXIF) from the original file to the new file, after GD processing.  exiftool can be configured through the admin settings. Not tested on Windows. 
+During post-processing PHP GD drops all the meta data from the JPEG. Therefore I implemented the use of the perl-based `exiftool`,  to copy JPEG meta (e.g. EXIF) from the original file to the new file, after GD processing.  `exiftool` can be configured through the admin settings. Not tested on Windows. 
 
 ## Performance
 Changes for slightly better performance on Raspberry Pi in my most common use-cases:
 - Configurable on/off picture preview while processing filters. That way on an iPad2 the screen renders faster and the flow seems more smooth, in particular if there is no  post-processing going on. Can be configured in the admin settings via *"Preload and show image during filter processing"*
-- Setting the JPEG quality to -1 in the settings and with no post-processing active (e.g. no filters, no frame, no polaroid, no chromakeying), now it will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. processing via PHP imagejpeg() and GD. Also avoids processing via *exiftool*, it is not required when the original file is retained.
+- Setting the JPEG quality to -1 in the settings and with no post-processing active (e.g. no filters, no frame, no polaroid, no chromakeying), now it will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. processing via PHP imagejpeg() and GD. Also avoids processing via `exiftool`, it is not required when the original file is retained.
 
 ## Changelog
 - 2020-02-09: Retain JPEG meta data (e.g. EXIF)
