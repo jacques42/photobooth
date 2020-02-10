@@ -114,7 +114,11 @@ if ($imageModified || $config['jpeg_quality_image'] !== -1) {
 } else {
     copy ( $filename_tmp, $filename_photo );
 }
-unlink ($filename_tmp);
+
+if (!$config['keep_images']) {
+    unlink($filename_tmp);
+}
+
 imagedestroy($imageResource);
 
 // insert into database
