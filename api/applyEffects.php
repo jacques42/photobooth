@@ -88,7 +88,6 @@ if ($config['chroma_keying']) {
     $chromaCopyResource = resizeImage($imageResource, 1500, 1000);
     imagejpeg($chromaCopyResource, $filename_keying, $config['jpeg_quality_chroma']);
     imagedestroy($chromaCopyResource);
-    $imageModified = true;
 }
 
 // image scale, create thumbnail
@@ -97,24 +96,23 @@ $thumbResource = resizeImage($imageResource, 500, 500);
 imagejpeg($thumbResource, $filename_thumb, $config['jpeg_quality_thumb']);
 imagedestroy($thumbResource);
 
-if ($imageModified || $config['jpeg_quality_image'] != -1) {
-   imagejpeg($imageResource, $filename_photo, $config['jpeg_quality_image']);
-   // preserve jpeg meta data
-   if ($config['exiftool']['cmd'])
-   {
-	$cmd = sprintf($config['exiftool']['cmd'],$filename_tmp, $filename_photo);
-	exec($cmd, $output, $returnValue);
-        if ($returnValue) {	
- 	       die(json_encode([
-	       	'error' => 'exiftool returned with an error code',
+if ($imageModified || $config['jpeg_quality_image'] !== -1) {
+    imagejpeg($imageResource, $filename_photo, $config['jpeg_quality_image']);
+    // preserve jpeg meta data
+    if ($config['exiftool']['cmd']) {
+        $cmd = sprintf($config['exiftool']['cmd'], $filename_tmp, $filename_photo);
+        exec($cmd, $output, $returnValue);
+        if ($returnValue) {
+            die(json_encode([
+                'error' => 'exiftool returned with an error code',
                 'cmd' => $cmd,
                 'returnValue' => $returnValue,
                 'output' => $output,
             ]));
-	}
-   }   
+        }
+    }
 } else {
-   copy ( $filename_tmp, $filename_photo );
+    copy ( $filename_tmp, $filename_photo );
 }
 unlink ($filename_tmp);
 imagedestroy($imageResource);
