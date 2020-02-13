@@ -175,5 +175,6 @@ const L10N = {
     'remotebuzzer_pin': 'Raspberry Pi pin number (0 to disable)',
     'remotebuzzer_nodebin': 'Node.js Binary Path',
     'commands_exiftool_cmd': 'exiftool command',
-    'commands_exiftool_msg': 'Success message for EXIF preservation'
+    'commands_exiftool_msg': 'Success message for EXIF preservation',
+    'preserve_exif_data': 'Preserve EXIF data'
 }

@@ -99,7 +99,7 @@ imagedestroy($thumbResource);
 if ($imageModified || $config['jpeg_quality_image'] !== -1) {
     imagejpeg($imageResource, $filename_photo, $config['jpeg_quality_image']);
     // preserve jpeg meta data
-    if ($config['exiftool']['cmd']) {
+    if ($config['preserve_exif_data'] && $config['exiftool']['cmd']) {
         $cmd = sprintf($config['exiftool']['cmd'], $filename_tmp, $filename_photo);
         exec($cmd, $output, $returnValue);
         if ($returnValue) {
