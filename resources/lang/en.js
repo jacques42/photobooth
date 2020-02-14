@@ -91,6 +91,7 @@ const L10N = {
     'folders_tmp': 'tmp Folder',
     'folders_keying': 'Keying Folder',
     'folders_data': 'Data Folder',
+    'keep_images': 'Keep original images in tmp folder',
     'general_language': 'Language',
     'send_all_later': 'Activate checkbox to add the entered address to a file (for example, to send a mail with all pictures later)',
     'mail_host': 'E-mail host adress',
@@ -175,5 +176,6 @@ const L10N = {
     'remotebuzzer_pin': 'Raspberry Pi pin number (0 to disable)',
     'remotebuzzer_nodebin': 'Node.js Binary Path',
     'commands_exiftool_cmd': 'EXIFtool command',
-    'commands_exiftool_msg': 'Success message for EXIF preservation'
+    'commands_exiftool_msg': 'Success message for EXIF preservation',
+    'preserve_exif_data': 'Preserve EXIF data'
 }

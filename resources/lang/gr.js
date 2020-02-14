@@ -91,6 +91,7 @@ const L10N = {
     'folders_tmp': 'tmp φάκελο',
     'folders_keying': 'Keying αρχείο',
     'general_language': 'γλώσσα',
+    'keep_images': 'Keep original images in tmp folder',
     'send_all_later': 'Ενεργοποιήστε το πλαίσιο ελέγχου για να προσθέσετε την καταχωρημένη διεύθυνση σε ένα αρχείο(π.χ. για να στείλετε ένα μήνυμα αργότερα με όλες τις εικόνες)',
     'mail_host': 'E-Mail Διεύθυνση κεντρικού υπολογιστή',
     'mail_username': 'Όνομα χρήστη του E-Mail',
@@ -173,5 +174,6 @@ const L10N = {
     'remotebuzzer_pin': 'Raspberry Pi pin number (0 to disable)',
     'remotebuzzer_nodebin': 'Node.js Binary Path',
     'commands_exiftool_cmd': 'exiftool command',
-    'commands_exiftool_msg': 'Success message for EXIF preservation'
+    'commands_exiftool_msg': 'Success message for EXIF preservation',
+    'preserve_exif_data': 'Preserve EXIF data'
 }

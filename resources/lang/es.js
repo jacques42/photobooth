@@ -91,6 +91,7 @@ const L10N = {
     'folders_tmp': 'Carpeta búfer',
     'folders_keying': 'Carpeta de croma verde',
     'folders_data': 'Carpeta de data',
+    'keep_images': 'Keep original images in tmp folder',
     'general_language': 'Idioma general',
     'send_all_later': 'Active la casilla de verificación para añadir el correo electrónico ingresado a un fichero (por ejemplo, para enviar todas las fotos más tarde)',
     'mail_host': 'Correo electrónico de anfitrión',
@@ -174,5 +175,6 @@ const L10N = {
     'remotebuzzer_pin': 'Raspberry Pi pin number (0 to disable)',
     'remotebuzzer_nodebin': 'Node.js Binary Path',
     'commands_exiftool_cmd': 'exiftool command',
-    'commands_exiftool_msg': 'Success message for EXIF preservation'
+    'commands_exiftool_msg': 'Success message for EXIF preservation',
+    'preserve_exif_data': 'Preserve EXIF data'
 }

@@ -33,6 +33,11 @@ $configsetup = [
 			'name' => 'dev',
 			'value' => $config['dev']
 		],
+		'keep_images' => [
+			'type' => 'checkbox',
+			'name' => 'keep_images',
+			'value' => $config['keep_images']
+		],
 		'show_error_messages' => [
 			'type' => 'checkbox',
 			'name' => 'show_error_messages',
@@ -108,7 +113,11 @@ $configsetup = [
 			'name' => 'image_preview_before_processing',
 			'value' => $config['image_preview_before_processing']
 		],
-
+		'preserve_exif_data' => [
+			'type' => 'checkbox',
+			'name' => 'preserve_exif_data',
+			'value' => $config['preserve_exif_data']
+		],
 		'use_filter' => [
 			'type' => 'checkbox',
 			'name' => 'use_filter',
