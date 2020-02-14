@@ -5,7 +5,7 @@ Original Repo: https://github.com/andreknieriem/photobooth<br>
 Original Readme: https://github.com/andreknieriem/photobooth/blob/master/README.md
 
 # Changes
-Based on master version 2.1.0 I have enhanced the code for my needs.
+Based on master version 2.1.0 with the following changes / enhancements:
 
 ## Hardware Buzzer / Remote Trigger
 Implements a server side (remote) trigger mechanism for photobooth. The trigger server will notify photobooth clients to either take a picture or a collage - similar to a button press on the screen or a key press on the client machine attached keyboard. The trigger server uses socket.io to maintain connectivity to the photobooth clients. Requires node.js on the photobooth webserver.
