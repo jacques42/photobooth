@@ -145,6 +145,7 @@ else
 fi
 
 info "### Installing common software..."
+apt-get install libimage-exiftool-perl
 apt install -y php-gd gphoto2
 
 echo -e "\033[0;33m### Is Photobooth the only website on this system?"

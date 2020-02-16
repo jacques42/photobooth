@@ -80,6 +80,8 @@ const L10N = {
     'show_fork': 'Fork Logo anzeigen',
     'general_cntdwn_time': 'Countdown Timer in Sekunden',
     'general_cheese_time': 'Cheeeeeeeese!-Timer in Millisekunden',
+    'showimage_whenprocessing': 'Bild laden bevor Filter berechnet werden',
+    'general_time_to_live': 'Bildanzeige nach Aufnahme in Millisekunden',
     'previewFromCam': 'Vorschau aus der Gerätekamera anzeigen',
     'previewCamTakesPic': 'Gerätekamera zur Bildaufnahme verwenden',
     'newest_first': 'Neueste Bilder zuerst anzeigen',
@@ -90,6 +92,7 @@ const L10N = {
     'folders_tmp': 'tmp Ordner',
     'folders_keying': 'Keying Ordner',
     'folders_data': 'Data Ordner',
+    'keep_images': 'Original Bilder im tmp Ordner behalten',
     'general_language': 'Sprache',
     'send_all_later': 'Checkbox aktivieren um die eingegebene Adresse einer Datei hinzuzufügen (z.B. um später eine Mail mit allen Bildern zu versenden)',
     'mail_host': 'E-Mail Host Adresse',
@@ -171,5 +174,8 @@ const L10N = {
     'remotebuzzer_enabled': 'Server aktiviert',
     'remotebuzzer_port': 'Server Port',
     'remotebuzzer_pin': 'Raspberry Pi PIN Nummer (0 = disabled)',
-    'remotebuzzer_nodebin': 'Pfad zum Node.js Binary'
+    'remotebuzzer_nodebin': 'Pfad zum Node.js Binary',
+    'commands_exiftool_cmd': 'exiftool command',
+    'commands_exiftool_msg': 'Success message for EXIF preservation',
+    'preserve_exif_data': 'Exif-Daten erhalten'
 }

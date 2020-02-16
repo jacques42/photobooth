@@ -5,7 +5,7 @@ Original Repo: https://github.com/andreknieriem/photobooth<br>
 Original Readme: https://github.com/andreknieriem/photobooth/blob/master/README.md
 
 # Changes
-Based on master version 2.1.0 I have enhanced the code for my needs.
+Based on master version 2.1.0 with the following changes / enhancements:
 
 ## Hardware Buzzer / Remote Trigger
 Implements a server side (remote) trigger mechanism for photobooth. The trigger server will notify photobooth clients to either take a picture or a collage - similar to a button press on the screen or a key press on the client machine attached keyboard. The trigger server uses socket.io to maintain connectivity to the photobooth clients. Requires node.js on the photobooth webserver.
@@ -14,13 +14,13 @@ Implements a server side (remote) trigger mechanism for photobooth. The trigger 
 Installation
 ************
 ```
+apt-get install libimage-exiftool-perl
 git clone https://github.com/jacques42/photobooth photobooth
-git checkout socketio-HW-button
 git submodule update --init
 yarn install
 yarn build
 ```
-Please  take care of the webserver setup manually.
+Please  take care of the webserver setup manually. The `install-raspbian.sh` in this repo currently does not work.
 
 *************
 Configuration
@@ -36,29 +36,33 @@ Hardware Buzzer
 ***************
 If the web server is a RaspberryPi, the trigger server can connect to a GPIO pin and will watch for a PIN_DOWN event (pull to ground). This will initiate a socket.io message to the photobooth client, to trigger the action (thrill).
 
-- Short button press (<= 2 sec) will trigger a photo in photobooth
-- Long button press (> 2 sec) will trigger a collage in photobooth. If in photobooth collage is configured with interruption, any subsequent button press will trigger the next collage picture. 
+- Short button press/release (<= 2 sec) will trigger a photo in photobooth
+- Long button press/release (> 2 sec) will trigger a collage in photobooth. If collage is configured with interruption, any subsequent button press will trigger the next collage picture. 
 
 Check https://www.npmjs.com/package/rpio for additional settings required on the Pi
 
 **************
 Remote Trigger
 **************
-The trigger server controls and coordinates sending commands via socket.io to the photobooth client. Next to a hardware button, any socket.io client can connect to the trigger server over the network, and send a trigger command. This gives full flexibility to integrate other backend systems for trigger sinals.
+The trigger server controls and coordinates sending commands via socket.io to the photobooth client. Next to a hardware button, any socket.io client can connect to the trigger server over the network, and send a trigger command. This gives full flexibility to integrate other backend systems for trigger signals.
 
-- Channel: "photobooth-socket"
-- Commands: "start-picture" or "start-collage"
-- Response: "completed"  will be emitted to the client, once photobooth finished the task
+- Channel: `photobooth-socket`
+- Commands: `start-picture`, `start-collage`
+- Response: `completed`  will be emitted to the client, once photobooth finished the task
 
 ## iPad 2 compatibility
 Minor changes for  iPad2 compatibility of the code, in order to be able to use iPad2 on iOS 9.3.5 (latest version). Webkit6 is supported on iOS9.3.5 but on that platform lacks implementation of key word 'let' and arrow functions syntax.
 
+## JPEG meta-data (i.e. EXIF)
+During post-processing PHP GD drops all the meta data from the JPEG. Therefore I implemented the use of the perl-based `exiftool`,  to copy JPEG meta (e.g. EXIF) from the original file to the new file, after GD processing.  `exiftool` can be configured through the admin settings. Not tested on Windows. 
+
 ## Performance
-Changes for slightly better performance on Raspberry Pi in my most common use-case, which is no filters, no chroma-keying, no frames are being rendered:  
-- Removed picture preview feature. That way on an iPad2 the screen renders faster and the flow seems smooth.  Draw-back is the screen remains black if there is heavy processing of the picture (core.js -> public.processPic). But I never us modifications on the box as all this much better can be done later and offline. Hence for me this is the better setup.
-- Setting the JPEG quality to -1 in the settings and no filters, etc. active now will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. PHP imagejpeg()
+Changes for slightly better performance on Raspberry Pi in my most common use-cases:
+- Configurable on/off picture preview while processing filters. That way on an iPad2 the screen renders faster and the flow seems more smooth, in particular if there is no  post-processing going on. Can be configured in the admin settings via *"Preload and show image during filter processing"*
+- Setting the JPEG quality to -1 in the settings and with no post-processing active (e.g. no filters, no frame, no polaroid, no chromakeying), now it will move the original camera file from data/tmp to data/images folder. This operation is much faster on the Pi vs. processing via PHP imagejpeg() and GD. Also avoids processing via `exiftool`, it is not required when the original file is retained.
 
 ## Changelog
+- 2020-02-09: Retain JPEG meta data (e.g. EXIF)
 - 2020-02-07: Small performance improvements for iPad2 / simple use-case scenario
 - 2020-02-04: Collage via long button press, robustness
 - 2020-02-02: All languages, restart trigger server at config change

@@ -80,6 +80,8 @@ const L10N = {
     'show_fork': 'Εμφανίστε το λογότυπο Fork',
     'general_cntdwn_time': 'Μετρητής αντίστροφης μέτρησης σε δευτερόλεπτα',
     'general_cheese_time': 'Cheeeeeeeese!-Μετρητής αντίστροφης σε χιλιοστά του δευτερολέπτου',
+    'showimage_whenprocessing': 'Preload image before processing',
+    'general_time_to_live': 'Show image after capture in milliseconds',
     'previewFromCam': 'Προβολή προεπισκόπησης από τη φωτογραφική μηχανή tablet',
     'previewCamTakesPic': 'Device cam takes picture',
     'newest_first': 'Προβολή των τελευταίων φωτογραφιών πρώτα',
@@ -90,6 +92,7 @@ const L10N = {
     'folders_tmp': 'tmp φάκελο',
     'folders_keying': 'Keying αρχείο',
     'general_language': 'γλώσσα',
+    'keep_images': 'Keep original images in tmp folder',
     'send_all_later': 'Ενεργοποιήστε το πλαίσιο ελέγχου για να προσθέσετε την καταχωρημένη διεύθυνση σε ένα αρχείο(π.χ. για να στείλετε ένα μήνυμα αργότερα με όλες τις εικόνες)',
     'mail_host': 'E-Mail Διεύθυνση κεντρικού υπολογιστή',
     'mail_username': 'Όνομα χρήστη του E-Mail',
@@ -170,5 +173,8 @@ const L10N = {
     'remotebuzzer_enabled': 'Enabled',
     'remotebuzzer_port': 'Server Port',
     'remotebuzzer_pin': 'Raspberry Pi pin number (0 to disable)',
-    'remotebuzzer_nodebin': 'Node.js Binary Path'
+    'remotebuzzer_nodebin': 'Node.js Binary Path',
+    'commands_exiftool_cmd': 'exiftool command',
+    'commands_exiftool_msg': 'Success message for EXIF preservation',
+    'preserve_exif_data': 'Preserve EXIF data'
 }

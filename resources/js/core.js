@@ -5,7 +5,7 @@ const photoBooth = (function () {
     const public = {},
         loader = $('#loader'),
         startPage = $('#start'),
-        timeToLive = 90000,
+        timeToLive = config.time_to_live,
         gallery = $('#gallery'),
         resultPage = $('#result'),
         webcamConstraints = {
@@ -304,7 +304,7 @@ const photoBooth = (function () {
         $('.spinner').show();
         $('.loading').text(photoStyle === 'photo' ? L10N.busy : L10N.busyCollage);
 
-/*        if (photoStyle === 'photo') {
+        if (photoStyle === 'photo' && config.image_preview_before_processing) {
             const preloadImage = new Image();
             preloadImage.onload = function() {
                 $('#loader').css('background-image', `url(${tempImageUrl})`);
@@ -312,7 +312,7 @@ const photoBooth = (function () {
             }
             preloadImage.src = tempImageUrl;
         }
-*/
+
         $.ajax({
             method: 'POST',
             url: 'api/applyEffects.php',
@@ -400,9 +400,7 @@ const photoBooth = (function () {
             $('#loader').css('background-image', 'url()');
             $('#loader').removeClass('showBackgroundImage');
 
-            if (!config.dev) {
-                public.resetTimeOut();
-            }
+            public.resetTimeOut();
         };
 
         preloadImage.src = imageUrl;

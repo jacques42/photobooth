@@ -28,6 +28,7 @@ $config['file_format_date'] = false;
 $config['cntdwn_time'] = '5'; // control countdown timer
 $config['collage_cntdwn_time'] = '3'; // control countdown timer between collage pictures
 $config['cheese_time'] = '1000'; // control time for cheeeeese!
+$config['keep_images'] = true;
 $config['use_filter'] = true;
 $config['default_imagefilter'] = 'plain';
 $config['disabled_filters'] = array();
@@ -44,6 +45,9 @@ $config['background_chroma'] = null;
 $config['force_buzzer'] = false;
 $config['webserver_ip'] = null;
 $config['rounded_corners'] = false;
+$config['image_preview_before_processing'] = true;
+$config['preserve_exif_data'] = false;
+$config['time_to_live'] = '90000';
 
 // specify key id to use that key to take a picture or collage (e.g. 13 is the enter key)
 // use for example https://keycode.info to get the key code
@@ -152,3 +156,7 @@ $config['remotebuzzer_enabled'] = false;
 $config['remotebuzzer_port'] = 4711;
 $config['remotebuzzer_pin'] = 0;
 $config['remotebuzzer_nodebin'] = "/usr/bin/node";
+
+// PRESERVE EXIF
+$config['exiftool']['cmd'] = null;
+$config['exiftool']['msg'] = null;

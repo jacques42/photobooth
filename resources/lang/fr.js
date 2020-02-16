@@ -80,6 +80,8 @@ const L10N = {
     'show_fork': 'Affichez le badge de la page Github',
     'general_cntdwn_time': 'Compte à rebours en secondes',
     'general_cheese_time': 'Définir le temps pour le Cheeeeeeeese! en millisecondes',
+    'showimage_whenprocessing': 'Preload image before processing',
+    'general_time_to_live': 'Show image after capture in milliseconds',
     'previewFromCam': 'Voir l\'aperçu par caméra',
     'previewCamTakesPic': 'Device cam takes picture',
     'newest_first': 'Affichez les dernières images en premier',
@@ -91,6 +93,7 @@ const L10N = {
     'folders_data': 'Dossier data',
     'folders_keying': 'Dossier font vert',
     'general_language': 'La langue',
+    'keep_images': 'Keep original images in tmp folder',
     'send_all_later': 'Activez la case à cocher pour ajouter l\'adresse saisie à un fichier (par exemple, pour envoyer un courrier avec toutes les images ultérieurement)',
     'mail_host': 'Adresse mail de l\'hôte',
     'mail_username': 'Nom d\'utilisateur du compte de messagerie',
@@ -171,5 +174,8 @@ const L10N = {
     'remotebuzzer_enabled': 'Enabled',
     'remotebuzzer_port': 'Server Port',
     'remotebuzzer_pin': 'Raspberry Pi pin number (0 to disable)',
-    'remotebuzzer_nodebin': 'Node.js Binary Path'
+    'remotebuzzer_nodebin': 'Node.js Binary Path',
+    'commands_exiftool_cmd': 'exiftool command',
+    'commands_exiftool_msg': 'Success message for EXIF preservation',
+    'preserve_exif_data': 'Preserve EXIF data'
 }

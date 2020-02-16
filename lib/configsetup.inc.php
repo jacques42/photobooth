@@ -33,6 +33,11 @@ $configsetup = [
 			'name' => 'dev',
 			'value' => $config['dev']
 		],
+		'keep_images' => [
+			'type' => 'checkbox',
+			'name' => 'keep_images',
+			'value' => $config['keep_images']
+		],
 		'show_error_messages' => [
 			'type' => 'checkbox',
 			'name' => 'show_error_messages',
@@ -102,6 +107,22 @@ $configsetup = [
 			'placeholder' => $defaultConfig['cheese_time'],
 			'name' => 'cheese_time',
 			'value' => $config['cheese_time']
+		],
+		'showimage_whenprocessing' => [
+			'type' => 'checkbox',
+			'name' => 'image_preview_before_processing',
+			'value' => $config['image_preview_before_processing']
+		],
+		'preserve_exif_data' => [
+			'type' => 'checkbox',
+			'name' => 'preserve_exif_data',
+			'value' => $config['preserve_exif_data']
+		],
+		'time_to_live' => [
+			'type' => 'input',
+			'placeholder' => $defaultConfig['time_to_live'],
+			'name' => 'time_to_live',
+			'value' => $config['time_to_live']
 		],
 		'use_filter' => [
 			'type' => 'checkbox',
@@ -662,6 +683,18 @@ $configsetup = [
 			'placeholder' => 'print_msg',
 			'name' => 'print[msg]',
 			'value' => $config['print']['msg']
+		],
+		'exiftool_cmd' => [
+			'type' => 'input',
+			'placeholder' => 'exiftool_cmd',
+			'name' => 'exiftool[cmd]',
+			'value' => $config['exiftool']['cmd']
+		],
+		'exiftool_msg' => [
+			'type' => 'input',
+			'placeholder' => 'exiftool_msg',
+			'name' => 'exiftool[msg]',
+			'value' => $config['exiftool']['msg']
 		]
 	],
 	'remotebuzzer' => [
