@@ -66,4 +66,3 @@ Changes for slightly better performance on Raspberry Pi in my most common use-ca
 - 2020-01-XX: Pulled updates from 2.1.0 release
 
 ## Todo
-
